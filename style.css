@@ -1,0 +1,626 @@
+/*
+Theme Name: UnderStrap
+Theme URI: http://understrap.com
+Author: Holger Koenemann
+Author URI: http://www.holgerkoenemann.de
+GitHub Theme URI: holger1411/understrap
+Description: Combination of Automattic´s _s theme and Bootstrap 4. Made as a solid starting point for your next theme project and WordPress website. Use it as starter theme or as a parent theme. It is up to you. Including Font Awesome support, built-in widget slider and much more you need for basic websites. IMPORTANT: All developer dependencies are not bundled with this install file. Just download the .zip, extract it and run "npm install" and "gulp copy-assets" inside the extracted /understrap folder.
+That downloads everything and moves it in place so that you can recompile your CSS and JS files;
+A developer version (with Gulp/node and Sass sources) is available on gitHub: https://github.com/holger1411/understrap
+A child theme is available on Github, too: https://github.com/holger1411/understrap-child;
+Version: 0.6.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: understrap
+Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+UnderStrap is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+
+Resource Licenses:
+Font Awesome: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Bootstrap: http://getbootstrap.com | https://github.com/twbs/bootstrap/blob/master/LICENSE (Code licensed under MIT, documentation under CC BY 3.0.)
+Owl Carousel 2: http://www.owlcarousel.owlgraphic.com/ | https://github.com/smashingboxes/OwlCarousel2/blob/develop/LICENSE (Code licensed under MIT)
+and of course
+jQuery: https://jquery.org | (Code licensed under MIT)
+WP Bootstrap Navwalker by Edward McIntyre: https://github.com/twittem/wp-bootstrap-navwalker | GNU GPL
+*/
+
+/*
+This file is just used to identify the theme in WordPress.
+The compiled CSS output can be found in /css/theme.css
+The SASS sources for it can be found in /sass/
+The dependencies can be found in /src/ after running "gulp copy-assets" terminal command
+
+...and now go out and play!
+*/
+
+body{
+  font-family: 'Fira Sans', sans-serif !important;
+}
+body {
+    line-height: 1.2 !important;
+    font-weight: 300 !important;
+}
+.hidden {
+    display: none !important;
+}
+.fw-slim{
+  font-weight: 100 !important;
+}
+.fw-light{
+  font-weight: 200 !important;
+}
+.fw-reg{
+  font-weight: 400 !important;
+}
+.overflowhidden{
+  overflow: hidden;
+}
+.circled{
+  border-radius: 3em !important;
+}
+.circled-l{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 3em !important;
+  border-bottom-left-radius: 3em !important;
+}
+.circled-r{
+  border-top-right-radius: 3em !important;
+  border-bottom-right-radius: 3em !important;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+div#allHouses {
+    background: #ececec;
+    padding: 15px 0px;
+}
+.item {
+    /*box-shadow: 0 2px 3px rgba(169, 169, 169, 0.36);*/
+    border: none !important;
+    transition: 0.65s;
+}
+.item:hover {
+    box-shadow: 0 2px 3px rgba(169, 169, 169, 0.36);
+    border: none !important;
+}
+p.price {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 0;
+}
+span.dateAdded {
+    margin: 0;
+    font-size: 13px;
+    color: #929292;
+}
+
+div#filters {
+    position: fixed;
+    background: rgba(78, 78, 78, 0.15);
+    min-height: 100vh;
+    z-index: 9999;
+    top: 56px;
+}
+div#filters .col-md-4 {
+    background: rgb(255, 255, 255);
+    min-height: calc(100vh - 56px);
+    z-index: 99999;
+    box-shadow: 2px 0 5px rgba(78, 78, 78, 0.15);
+}
+.blured{
+  filter: blur(10px);
+}
+.irs-with-grid {
+    height: 60px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/**/
+.btn-more {
+  line-height: 1.5;
+  background: #ee5b5b;
+  /*background: -moz-linear-gradient(left, #51a0a0 0%, #59a582 100%);
+  background: -webkit-linear-gradient(left, #51a0a0 0%, #59a582 100%);
+  background: linear-gradient(to right, #51a0a0 0%, #59a582 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#51a0a0', endColorstr='#59a582', GradientType=1);*/
+  color: white;
+  border: 0 !important;
+  transition: 0.5s !important;
+  text-align: center;
+}
+.btn-more.active {
+  background: #ad2727;
+  /*background: -moz-linear-gradient(left, #51a0a0 0%, #59a582 100%);
+  background: -webkit-linear-gradient(left, #51a0a0 0%, #59a582 100%);
+  background: linear-gradient(to right, #51a0a0 0%, #59a582 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#51a0a0', endColorstr='#59a582', GradientType=1);*/
+  color: white;
+  border: 0 !important;
+  transition: 0.5s !important;
+  text-align: center;
+}
+.btn-more:hover {
+  filter: grayscale(0.3);
+  color: white;
+}
+
+.btn-more:focus {
+  outline: 0 !important;
+  color: white;
+}
+
+.btn-more:active {
+  background: #ee5b5b;
+  /*background: -moz-linear-gradient(left, #51a0a0 0%, #59a582 100%) !important;
+  background: -webkit-linear-gradient(left, #51a0a0 0%, #59a582 100% !important);
+  background: linear-gradient(to right, #51a0a0 0%, #59a582 100%)!important;
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#51a0a0', endColorstr='#59a582', GradientType=1) !important;*/
+  filter: grayscale(1);
+}
+/**/
+.btn-custom-primary {
+  line-height: 1.5;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  border: 0 !important;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.btn-custom-primary:hover {
+  filter: grayscale(0.3);
+  color: white;
+}
+
+.btn-custom-primary:focus {
+  outline: 0 !important;
+  color: white;
+}
+
+.btn-custom-primary:active {
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%) !important;
+  filter: grayscale(1);
+}
+/**/
+.btn-custom-danger {
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+  color: white;
+  border: 0 !important;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.btn-custom-danger:hover {
+  filter: grayscale(0.3);
+  color: white;
+}
+
+.btn-custom-danger:focus {
+  outline: 0 !important;
+  color: white;
+}
+
+.btn-custom-danger:active {
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%) !important;
+  filter: grayscale(1);
+}
+/**/
+.btn-toggled {
+  line-height: 1.5;
+  background: #ffffff;
+  /*background: -moz-linear-gradient(left, #51a0a0 0%, #59a582 100%);*/
+  /* background: -webkit-linear-gradient(left, #51a0a0 0%, #59a582 100%); */
+  /* background: linear-gradient(to right, #51a0a0 0%, #59a582 100%); */
+  /*filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#51a0a0', endColorstr='#59a582', GradientType=1);*/
+  color: black;
+  transition: 0.5s;
+  text-align: center;
+  border: 2px solid #59a582 !important;
+  box-shadow: none !important;
+}
+
+.btn-untoggled {
+    line-height: 1.5;
+    background: #ffffff;
+    /*background: -moz-linear-gradient(left, #51a0a0 0%, #59a582 100%);*/
+    /* background: -webkit-linear-gradient(left, #51a0a0 0%, #59a582 100%); */
+    /* background: linear-gradient(to right, #51a0a0 0%, #59a582 100%); */
+    /*filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#51a0a0', endColorstr='#59a582', GradientType=1);*/
+    color: black;
+    border: 2px solid transparent !important;
+    transition: 0.5s;
+    text-align: center;
+    box-shadow: none !important;
+}
+
+.btn-untoggled:hover {
+  filter: grayscale(0.3);
+  border: 2px solid #59a582 !important;
+  color: black;
+  box-shadow: none !important;
+}
+
+.btn-untoggled:focus {
+  outline: 0 !important;
+  border: 2px solid transparent !important;
+  color: black;
+  box-shadow: none !important;
+}
+
+.btn-untoggled:active {
+  background: #ffffff;
+  border: 2px solid #59a582 !important;
+  /*background: -moz-linear-gradient(left, #51a0a0 0%, #59a582 100%);
+  background: -webkit-linear-gradient(left, #51a0a0 0%, #59a582 100%);
+  background: linear-gradient(to right, #51a0a0 0%, #59a582 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#51a0a0', endColorstr='#59a582', GradientType=1);*/
+  filter: grayscale(1);
+  box-shadow: none !important;
+}
+
+.btn-def {
+  line-height: 1.5;
+  background: #ff004d;
+  /* background: -webkit-linear-gradient(left, #51a0a0 0%, #59a582 100%); */
+  /* background: linear-gradient(to right, #51a0a0 0%, #59a582 100%); */
+  color: white;
+  border: 0 !important;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.btn-def:hover {
+  filter: grayscale(0.3);
+  color: black;
+}
+
+.btn-def:focus {
+  outline: 0 !important;
+  color: black;
+}
+.btn-group.wborder {
+    border: 2px solid #ee5b5b;
+    border-radius: 3em;
+}
+.btn-def:active {
+  background: #ff004d;
+  /*background: -moz-linear-gradient(left, #51a0a0 0%, #59a582 100%);
+  background: -webkit-linear-gradient(left, #51a0a0 0%, #59a582 100%);
+  background: linear-gradient(to right, #51a0a0 0%, #59a582 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#51a0a0', endColorstr='#59a582', GradientType=1);*/
+  filter: grayscale(1);
+}
+
+.btn-active {
+    /*background: #59a582;
+    border: 0 !important;*/
+    z-index: 2;
+    /*color: white;*/
+}
+.btn-inactive {
+    background: #fff;
+    border: 0 !important;
+}
+/*form#uwpqsffrom_54 {
+    display: flex;
+    margin: 2em 0;
+}*/
+div#filterresult {
+    padding: 0;
+}
+div#points {
+    min-height: 70vh;
+    background: linear-gradient(black,rgba(0, 245, 120, 0.32));
+    background: rgb(0, 0, 0);
+    background-image: url(./img/frontbg.png);
+    background-size: cover;
+    background-position: top;
+}
+/*
+div#overlay {
+    width: 100%;
+    min-height: 70vh;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+}
+*/
+div#wrapper-footer {
+    background: black;
+    color: white;
+    font-weight: 100;
+        min-height: 200px;
+}
+.bg-e8{
+  background-color: #e8e8e8;
+}
+.content {
+    background: white;
+    padding: 15px;
+    margin-top: 15px;
+}
+.btn {
+    font-weight: 300 !important;
+}
+.lotGallery {
+    height: 350px;
+    border-radius: .25rem .25rem 0 0;
+}
+li.list-group-item {
+    color: #929292;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+p.price span {
+    font-size: 15px;
+    font-weight: 400;
+}
+img.img-fluid.col-3.rounded-top {
+    height: 100%;
+}
+.wrapper {
+    padding: 0 !important;
+}
+.lotinfo {
+    font-size: 14px;
+    font-weight: 400;
+    color: #a7a7a7;
+}
+.price {
+    color: #444444;
+}
+h2.howitworks {
+    font-weight: 100;
+}
+i.pointicon {
+    font-size: 4rem;
+}
+div#points h5 {
+    font-weight: 100;
+    font-size: 17px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+div#wrapper-footer-full {
+    background: #444444;
+    color: white;
+}
+
+div#page {
+    background: #e8e8e8;
+}
+
+div#detailed {
+    background: white;
+}
+.filter-block {
+    z-index: 88;
+}
+i#findyours {
+    font-size: 6rem;
+}
+button.slick-next {
+      z-index: 1;
+    right: 15px !important;
+}
+button.slick-prev {
+      z-index: 1;
+    left: 15px !important;
+}
+p.obj-info {
+    font-size: 1.8rem;
+}
+p.obj-info span.border-r {
+    border-right: 1px solid #dadada;
+}
+
+p.price.price-obj {
+    font-size: 1.7em;
+}
+.obj {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+div#querybar {
+    color: black;
+    border-radius: 0.25rem;
+    line-height: 35px;
+    margin: 0 auto;
+}
+div#querybar #querywrapper {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 10px;
+    border-radius: 0.25rem;
+    margin-bottom: 8px !important;
+}
+div#querywrapper .input-group {
+    /*background: white;*/
+    border-radius: 0.25rem;
+}
+div#onmap {
+    min-height: 80vh;
+}
+div#pointonmap {
+    min-height: 30vh;
+}
+div#populars a {
+    color: white;
+    line-height: 25px;
+}
+div#querywrapper input, #_road {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-width: 0 !important;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
+div#filter-block {
+    background: white;
+}
+.btn-c-primary {
+    color: #fff !IMPORTANT;
+    background-color: rgba(255, 255, 255, 0.25);
+    /* border-color: #007bff; */
+    border: 0;
+    font-weight: 200 !important;
+    transition: 0.5s;
+}
+
+.btn-c-primary:hover {
+    color: #fff !important;
+    background-color: rgba(255, 255, 255, 0.30);
+}
+.border-0{
+  border:0;
+}
+
+input#_priceFrom {
+    border-right: 1px solid #dedede !important;
+}
+.main-image {
+    transition: 0.5s;
+}
+.main-image:hover {
+    filter: opacity(0.95);
+}
+.bg-white {
+    background-color: #fff!important;
+    border-bottom: 1px solid #dadada;
+}
+
+ul#main-menu a {
+    color: #525252;
+    font-weight: 400;
+}
+ul#main-menu a:hover {
+    color: #8c8b8b;
+    font-weight: 400;
+}
+div#propType {
+    background: white;
+}
+.btn:focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
+.btn{
+  outline: none !important;
+  box-shadow: none !important;
+}
+.btn-inactive {
+    color: #525252;
+}
+button#maplist {
+    background: url(/wp-content/themes/understrap/img/map.png);
+    border-radius: 3em;
+    color: black;
+    font-weight: 400 !important;
+    border: 2px solid #ee5a5a;
+    transition: 0.5s;
+}
+button#maplist:hover {
+    filter: grayscale(0.4);
+}
+button#toggleFilters {
+    border: 2px solid #ee5a5a !important;
+}
+.card.card-baloon .close {
+    position: absolute;
+    padding: 8px 10px;
+    right: 0;
+    color: white;
+    opacity: 1;
+    font-size: 14px;
+}
+.card.card-baloon {
+    border: 0;
+    position: relative;
+    box-shadow: 0 3px 10px #989898bf;
+}
+.card.card-baloon img {
+    border-radius: 0.25em 0.25em 0 0;
+}
+.mobile-menu {
+    position: fixed;
+    z-index: 999999999;
+    background: white;
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    left: 0;
+    color: black;
+    padding: 0;
+    top: 0;
+    text-align: center;
+}
+div#wrapper-navbar img {
+    width: 130px;
+}
+div#wrapper-navbar nav {
+    justify-content: space-between;
+}
+.navbar-collapse {
+    flex-basis: auto !important;
+    align-items: center;
+}
+div#navbarNavDropdownMobile {
+      width: 100%;
+    text-align: center;
+    line-height: 42px;
+    padding-top: 20px;
+    color: black;
+}
+ul#main-menu-mobile li{
+    transition: 0.8s;
+}
+ul#main-menu-mobile li:hover {
+    background: #ee5a5a;
+    color: white;
+    border-radius: 3em;
+}
+ul#main-menu-mobile li:hover a {
+
+    color: white !important;
+
+}
+ul#main-menu-mobile a {
+    font-weight: 300;
+    color: black;
+}
+button:focus {
+    outline: 0 !important;
+}
+@media(max-width:767px){
+  ul#createBtn {
+    flex-direction: row !important;
+  }
+  div#propType .col-12 {
+    display: flex;
+    padding-bottom: 10px;
+    /* background-color: white; */
+    justify-content: space-between;
+    /* width: 100vw !IMPORTANT; */
+  }
+}
+@media(max-width:457px){
+  ul#createBtn {
+    flex-direction: row !important;
+    justify-content: space-between;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+  }
+}
+/*select#_whatfor {
+    background: #dfdfdf;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0.25rem;
+    -webkit-appearance: none;
+}*/
