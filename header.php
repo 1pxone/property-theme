@@ -33,6 +33,7 @@ $container = get_theme_mod( 'understrap_container_type' );
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/slick/slick-theme.css"/>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/slick/slick.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/ion.rangeSlider.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/dropzone.js" type="text/javascript"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/moment.js" type="text/javascript"></script>
 	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>

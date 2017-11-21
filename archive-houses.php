@@ -15,18 +15,19 @@ $container   = get_theme_mod( 'understrap_container_type' );
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
 
-<div class="wrapper" id="archive-wrapper">
+<div class="wrapper bg-e8" id="archive-wrapper">
 	<?php get_template_part( 'filter-templates/houses-rent-bar' ); ?>
+	<?php get_template_part( 'filter-templates/houses-filters' ); ?>
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
-			<?php get_template_part( 'filter-templates/houses-filters' ); ?>
+
 
 			<!-- Do the left sidebar check -->
 			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
 
-			<main class="site-main" id="main">
-				<div id="filterresult" class="row bg-e8" >
+			<main class="site-main " id="main">
+				<div id="filterresult" class="row " >
 					<div class="col-12 px-0 <?php if (isset($_GET['map']) && $_GET['map'] == TRUE ){echo "";} else {echo "hidden";} ?>" id="onmap">
 						<div id="map"></div>
 					</div>
