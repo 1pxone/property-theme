@@ -303,7 +303,16 @@ div#filters .col-md-4 {
 .btn-inactive {
     background: #fff;
     border: 0 !important;
+    color: #525252;
 }
+.btn-inactive.active, .btn-inactive.active:focus {
+    background: #ee5b5b !important;
+    border: 0 !important;
+    color: #FFF;
+}
+/*.btn-inactive {
+    color: #525252;
+}*/
 /*form#uwpqsffrom_54 {
     display: flex;
     margin: 2em 0;
@@ -512,9 +521,7 @@ div#propType {
   outline: none !important;
   box-shadow: none !important;
 }
-.btn-inactive {
-    color: #525252;
-}
+
 button#maplist {
     background: url(/wp-content/themes/understrap/img/map.png);
     border-radius: 3em;
@@ -656,6 +663,12 @@ div.preview {
 }
 .w-0{
   width: 0 !important;
+}
+.fw-400{
+  font-weight: 400 !important;
+}
+.fw-400 .btn {
+    font-weight: 400 !important;
 }
 /*select#_whatfor {
     background: #dfdfdf;

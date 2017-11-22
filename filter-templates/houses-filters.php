@@ -35,10 +35,10 @@
                       <p>Стоимость, руб.:</p>
                     </div>
                     <div class="col-12 col-sm-6">
-                        <input type="number" name="price_min" placeholder="от <?php print_r(min_meta_value()) ?>" class="form-control" aria-label="Text input with checkbox">
+                        <input type="number" name="price_min" placeholder="" class="form-control" aria-label="Text input with checkbox">
                     </div>
                     <div class="col-12 col-sm-6">
-                        <input type="number" name="price_max" placeholder="до <?php print_r(max_meta_value()) ?>" class="form-control" aria-label="Text input with radio button">
+                        <input type="number" name="price_max" placeholder="" class="form-control" aria-label="Text input with radio button">
                     </div>
                   </div>
                 </div>

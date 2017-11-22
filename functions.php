@@ -75,6 +75,25 @@ require get_template_directory() . '/inc/editor.php';
 
 flush_rewrite_rules( false );
 
+
+if (isset( $_POST['cpt_nonce_field'] )
+&& wp_verify_nonce( $_POST['cpt_nonce_field'], 'cpt_nonce_action' ) ) {
+    // create post object with the form values
+    $my_cptpost_args = array(
+    'post_title'    => $_POST['cptTitle'],
+    'post_content'  => $_POST['cptContent'],
+    'post_status'   => 'pending',
+    'post_type' => $_POST['post_type'],
+    'meta_input' => array(
+        'name' => 'сотки',
+        'сотки' => 12
+    )
+  );
+  // insert the post into the database
+  $cpt_id = wp_insert_post( $my_cptpost_args, $wp_error);
+}
+
+
 if ( ! function_exists( 'houses_cp' ) ) {
 
 // Опишем требуемый функционал

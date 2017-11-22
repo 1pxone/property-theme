@@ -6,24 +6,24 @@
  */
 
 ?>
-<!-- <div class="row pr-0">
-    <div class="col-12 mb-3"> -->
-
       <div class="row">
         <div class="col-6 mb-3">
           <div class="form-group mt-3">
             <label>Количество этажей:</label>
           <div class="btn-group w-100" data-toggle="buttons">
-              <label class="btn btn-more active w-100">
-                  <input type="radio" name="floors" id="floor1" autocomplete="off" value="1 этаж" checked>1
+              <label class="btn btn-inactive active w-100">
+                  <input type="radio" name="floors" id="floor0" autocomplete="off" value="0 этажей" checked>0
               </label>
-              <label class="btn btn-more w-100">
+              <label class="btn btn-inactive w-100">
+                  <input type="radio" name="floors" id="floor1" autocomplete="off" value="1 этаж" >1
+              </label>
+              <label class="btn btn-inactive w-100">
                   <input type="radio" name="floors" id="floor2" autocomplete="off" value="2 этажа">2
               </label>
-              <label class="btn btn-more w-100">
+              <label class="btn btn-inactive w-100">
                   <input type="radio" name="floors" id="floor3" autocomplete="off" value="3 этажа">3
               </label>
-              <label class="btn btn-more w-100">
+              <label class="btn btn-inactive w-100">
                   <input type="radio" name="floors" id="floor4" autocomplete="off" value="4+ этажа">4+
               </label>
           </div>
@@ -34,16 +34,19 @@
         <div class="form-group mt-3">
           <label>Количество спален:</label>
           <div class="btn-group w-100" data-toggle="buttons">
-              <label class="btn btn-more active w-100">
-                  <input type="radio" name="bedrooms" id="bedroom1" autocomplete="off" value="1 спальня" checked>1
+            <label class="btn btn-inactive active w-100">
+                <input type="radio" name="floors" id="bedroom0" autocomplete="off" value="нет спален" checked>0
+            </label>
+              <label class="btn btn-inactive w-100">
+                  <input type="radio" name="bedrooms" id="bedroom1" autocomplete="off" value="1 спальня" >1
               </label>
-              <label class="btn btn-more w-100">
+              <label class="btn btn-inactive w-100">
                   <input type="radio" name="bedrooms" id="bedroom2" autocomplete="off" value="2 спальни">2
               </label>
-              <label class="btn btn-more w-100">
+              <label class="btn btn-inactive w-100">
                   <input type="radio" name="bedrooms" id="bedroom3" autocomplete="off" value="3 спальни">3
               </label>
-              <label class="btn btn-more w-100">
+              <label class="btn btn-inactive w-100">
                   <input type="radio" name="bedrooms" id="bedroom4" autocomplete="off" value="4+ спальни">4+
               </label>
           </div>
@@ -53,17 +56,20 @@
       <div class="col-6 mb-3">
         <div class="form-group">
           <label>Количество санузлов:</label>
-          <div class="btn-group w-100" data-toggle="buttons">
-              <label class="btn btn-more active w-100">
-                  <input type="radio" name="toilets" id="toilet1" autocomplete="off" value="1 санузел" checked>1
+            <div class="btn-group w-100" data-toggle="buttons">
+              <label class="btn btn-inactive active w-100">
+                  <input type="radio" name="floors" id="toilet0" autocomplete="off" value="нет санузлов" checked>0
               </label>
-              <label class="btn btn-more w-100">
+              <label class="btn btn-inactive w-100">
+                  <input type="radio" name="toilets" id="toilet1" autocomplete="off" value="1 санузел">1
+              </label>
+              <label class="btn btn-inactive w-100">
                   <input type="radio" name="toilets" id="toilet2" autocomplete="off" value="2 санузла">2
               </label>
-              <label class="btn btn-more w-100">
+              <label class="btn btn-inactive w-100">
                   <input type="radio" name="toilets" id="toilet3" autocomplete="off" value="3 санузла">3
               </label>
-              <label class="btn btn-more w-100">
+              <label class="btn btn-inactive w-100">
                   <input type="radio" name="toilets" id="toilet4" autocomplete="off" value="4+ санузла">4+
               </label>
           </div>
@@ -71,22 +77,23 @@
         <div class="form-group mt-3">
           <label>Подвал:</label>
           <div class="btn-group w-100" data-toggle="buttons">
-              <label class="btn btn-more active w-100">
-                  <input type="radio" class="w-100" name="basement" autocomplete="off" value="Да" checked>Да
+              <label class="btn btn-inactive active w-100">
+                  <input type="radio" class="w-100" name="basement" autocomplete="off" value="Нет" checked>Нет
               </label>
-              <label class="btn btn-more w-100">
-                  <input type="radio" class="w-100" name="basement" autocomplete="off" value="Нет">Нет
+              <label class="btn btn-inactive  w-100">
+                  <input type="radio" class="w-100" name="basement" autocomplete="off" value="Да" >Да
               </label>
           </div>
         </div>
         <div class="form-group mt-3">
           <label>Кондиционер:</label>
           <div class="btn-group w-100" data-toggle="buttons">
-              <label class="btn btn-more active w-100">
-                  <input type="radio" class="w-100" name="conditioner" autocomplete="off" value="Да" checked>Да
-              </label>
-              <label class="btn btn-more w-100">
+
+              <label class="btn btn-inactive active w-100">
                   <input type="radio" class="w-100" name="conditioner" autocomplete="off" value="Нет" checked>Нет
+              </label>
+              <label class="btn btn-inactive w-100">
+                  <input type="radio" class="w-100" name="conditioner" autocomplete="off" value="Да">Да
               </label>
           </div>
         </div>
@@ -95,9 +102,9 @@
       <div class="col-6 mb-3">
         <div class="form-group">
 
-            <label for="material">Материал постройки:</label>
-            <select multiple class="form-control" id="material" name="material">
-              <option value="" disabled selected>Один или несколько</option>
+            <label for="material">Материал постройки:</label><br/>
+            <!-- <select multiple class="form-control" id="material" name="material">
+              <option value="" disabled selected>Один или несколько</option> -->
               <?php $material= array(
                       "Дерево",
                       "Кирпич",
@@ -111,9 +118,20 @@
                       "Сэндвич-панели"
                   );
               foreach($material as $key): ?>
-                  <option value="<?php echo $key; ?>"><?php echo $key; ?></option>
+                  <!-- <option value="<?php echo $key; ?>"><?php echo $key; ?></option> -->
+                  <!-- <div class="form-check">
+                     <label class="form-check-label">
+                       <input type="checkbox" class="form-check-input" required id="material" name="material" value="<?php echo $key; ?>">
+                       <?php echo $key; ?>
+                     </label>
+                   </div> -->
+                   <div class="btn-group mb-1" data-toggle="buttons">
+                   <label class="btn btn-inactive ">
+                       <input type="checkbox" class="" name="material" autocomplete="off" value="<?php echo $key; ?>" ><?php echo $key; ?>
+                   </label>
+                 </div>
               <?php endforeach; ?>
-            </select>
+            <!-- </select> -->
 
         </div>
       </div>
@@ -156,6 +174,7 @@
             <label for="water">Водоснабжение:</label>
             <select class="form-control" id="water" name="water">
               <?php $water= array(
+                      "Отсутсвует",
                       "Колодец",
                       "Скважина",
                       "Центральное"
@@ -198,13 +217,13 @@
           </select>
 
       </div>
-      <div class="form-group mb-4">
-        <label for="road">Шоссе:</label>
-        <select multiple class="form-control" name="road" required id="road">
-          <option value="" disabled selected>Одно или несколько</option>
+      <div class="form-group mb-3">
+        <label for="road">Шоссе:</label><br/>
+        <!-- <select multiple class="form-control" name="road" required id="road">
+          <option value="" disabled selected>Одно или несколько</option> -->
            <?php $roads= array(
                   "Алтуфьевское",
-                  "Боровское шоссе",
+                  "Боровское",
                    "Варшавское",
                    "Волоколамское",
                    "Дмитровское",
@@ -226,29 +245,30 @@
                    "Ярославское"
                );
            foreach($roads as $key): ?>
-               <option value="<?php echo $key; ?>"><?php echo $key; ?></option>
+               <!-- <option value="<?php echo $key; ?>"><?php echo $key; ?></option> -->
+               <div class="btn-group mb-1" data-toggle="buttons">
+               <label class="btn btn-sm btn-inactive ">
+                   <input type="checkbox" class="" name="road" autocomplete="off" value="<?php echo $key; ?>" ><?php echo $key; ?>
+               </label>
+             </div>
            <?php endforeach; ?>
-       </select>
+           <div class="input-group">
+             <span class="input-group-addon" id="basic-addon2">Другое</span>
+             <input type="Текст" class="form-control" placeholder="" min="0"  aria-describedby="basic-addon2" id="road_input" name="road">
+           </div>
+       <!-- </select> -->
       </div>
-      <div class="form-group pt-2">
+      <div class="form-group">
           <label for="kilometers">Километров от МКАД:</label>
           <div class="input-group">
             <input type="number" class="form-control" placeholder="" min="0"  aria-describedby="basic-addon2" id="kilometers" name="kilometers">
             <span class="input-group-addon" id="basic-addon2">км</span>
           </div>
       </div>
-      <div class="form-group w-100 pt-4">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <input type="checkbox"  name="house_securness" id="house_securness">
-          </span>
-          <input type="text" class="form-control" disabled value="Система охраны дома">
-        </div>
-      </div>
+
     </div>
     <div class="col-6 ">
       <div class="form-group">
-
           <label for="canalization">Канализация:</label>
           <select class="form-control" id="canalization" name="canalization">
             <option>Отсутствует</option>
@@ -256,7 +276,6 @@
             <option>Центральная</option>
             <option>Яма</option>
           </select>
-
       </div>
       <div class="form-group">
           <label for="build_year">Год постройки:</label>
@@ -276,7 +295,7 @@
           <label for="area_footage">Площадь участка:</label>
           <div class="input-group">
             <input type="number" class="form-control" placeholder="" min="0"  aria-describedby="basic-addon2" id="area_footage" name="area_footage">
-            <span class="input-group-addon" id="basic-addon2">Соток</span>
+            <span class="input-group-addon" id="basic-addon2">Сот.</span>
           </div>
       </div>
       <div class="form-group">
@@ -292,6 +311,22 @@
             <input type="checkbox"  id="bargaining" name="bargaining">
           </span>
           <input type="text" class="form-control" disabled value="Торг уместен">
+        </div>
+      </div>
+      <div class="form-group w-100">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <input type="checkbox"  id="no_price" name="no_price">
+          </span>
+          <input type="text" class="form-control" disabled value="По договоренности">
+        </div>
+      </div>
+      <div class="form-group w-100">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <input type="checkbox"  name="house_securness" id="house_securness">
+          </span>
+          <input type="text" class="form-control" disabled value="Система охраны дома">
         </div>
       </div>
     </div>
