@@ -6,7 +6,7 @@
  */
 
 ?>
-      <div class="row">
+      <div class="row" id="house_form">
         <div class="col-6 mb-3">
           <div class="form-group mt-3">
             <label>Количество этажей:</label>

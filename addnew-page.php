@@ -32,7 +32,7 @@
                     <label class="btn btn-inactive circled w-100">
                         <input type="radio" name="prop_type" id="prop_type1" autocomplete="off" value="1">Таунхаус
                     </label>
-                    <label class="btn btn-inactive circled w-100">
+                    <label class="btn btn-inactive circled w-100" id="toggleForm">
                         <input type="radio" name="prop_type" id="prop_type2" autocomplete="off" value="2">Участок
                     </label>
                 </div>
@@ -61,25 +61,38 @@
 
 <script>
 var post_types = {
-  "00":"houses",
-  "01":"houses-sale",
-  "10":"townhouses",
-  "11":"townhouses-sale",
-  "20":"areas",
-  "21":"areas-sale",
+  00:"houses-sale",
+  01:"houses",
+  10:"townhouses-sale",
+  11:"townhouses",
+  20:"areas-sale",
+  21:"areas"
 };
+var postType = 00;
+var propType = 0;
+var sellType = 0;
 
-var postType = "00";
-
-var propType = "0";
-var sellType = "0";
+$("#toggleForm").on("click", function(){
+  // var foo = jQuery('#foo');
+  //
+  // foo.detach(); //удаляем элемент
+  //
+  // //много-много кода
+  //
+  // foo.appendTo('body');
+ $("#house_form").
+});
 
 $("#prop_type_wrapper label").on("click", function(){
-  console.log($(this).find("input").val());
+  propType = $(this).find("input").val();
+  postType = `${propType}${sellType}`;
+  console.log(postType);
 });
 
 $("#sell_type_wrapper label").on("click", function(){
-  console.log($(this).find("input").val());
+  sellType = $(this).find("input").val();
+  postType = `${propType}${sellType}`;
+  console.log(postType);
 });
 
 $( "#createForm" ).on( "submit", function(e){
@@ -104,7 +117,8 @@ $( "#createForm" ).on( "submit", function(e){
     }
   };
   var tpl = `<div>${newData}<hr />${imgs}</div>`;
-  $("#post_type").val(postType);
+
+  $("#post_type").val(post_types[postType*1]);
   $("#cptContent").val(tpl);
 
 });
