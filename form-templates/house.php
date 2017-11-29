@@ -35,7 +35,7 @@
           <label>Количество спален:</label>
           <div class="btn-group w-100" data-toggle="buttons">
             <label class="btn btn-inactive active w-100">
-                <input type="radio" name="floors" id="bedroom0" autocomplete="off" value="нет спален" checked>0
+                <input type="radio" name="bedrooms" id="bedroom0" autocomplete="off" value="нет спален" checked>0
             </label>
               <label class="btn btn-inactive w-100">
                   <input type="radio" name="bedrooms" id="bedroom1" autocomplete="off" value="1 спальня" >1
@@ -58,7 +58,7 @@
           <label>Количество санузлов:</label>
             <div class="btn-group w-100" data-toggle="buttons">
               <label class="btn btn-inactive active w-100">
-                  <input type="radio" name="floors" id="toilet0" autocomplete="off" value="нет санузлов" checked>0
+                  <input type="radio" name="toilets" id="toilet0" autocomplete="off" value="нет санузлов" checked>0
               </label>
               <label class="btn btn-inactive w-100">
                   <input type="radio" name="toilets" id="toilet1" autocomplete="off" value="1 санузел">1
@@ -408,35 +408,28 @@
   <!-- <?php echo do_shortcode( '[contact-form-7 id="32" title="addnew"]' );?> -->
 <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
-        <script>
-        var cur = 0;
-        var photoCount = 15;
-        function readURL(input) {
-          cur++;
-
-
-          if(photoCount >= cur){
-
-         // if (input.files && input.files[0]) {
-
-             var reader = new FileReader();
-             reader.onload = function (e) {
-               var elem = `<div class="col-4"><label for="uploadbtn${cur}" class="uploadButton pt-5"><i class="ion-camera h1 pt-5"></i></label><input type="hidden" name="uploadImg${cur}" id="uploadImg${cur}" value=""><input style="opacity: 0; z-index: -1;" type="file" name="upload" id="uploadbtn${cur}" onchange="readURL(this);" class="w-0"></div>`;
-               $(input).prev().prev()
-                   .css('background-image',`url(${e.target.result})`)
-                   .css('color',`transparent`);
-               $(input).prev().val(e.target.result);
-               if(cur < photoCount){
-                 $( ".photoRow" ).append( elem );
-               }
-             };
-             reader.readAsDataURL(input.files[0]);
-           }
-         // }
-     }
-   </script>
 <script>
-
+var cur = 0;
+var photoCount = 15;
+function readURL(input) {
+  cur++;
+  if(photoCount >= cur){
+     var reader = new FileReader();
+     reader.onload = function (e) {
+       var elem = `<div class="col-4"><label for="uploadbtn${cur}" class="uploadButton pt-5"><i class="ion-camera h1 pt-5"></i></label><input type="hidden" name="uploadImg${cur}" id="uploadImg${cur}" value=""><input style="opacity: 0; z-index: -1;" type="file" name="upload" id="uploadbtn${cur}" onchange="readURL(this);" class="w-0"></div>`;
+       $(input).prev().prev()
+           .css('background-image',`url(${e.target.result})`)
+           .css('color',`transparent`);
+       $(input).prev().val(e.target.result);
+       if(cur < photoCount){
+         $( ".photoRow" ).append( elem );
+       }
+     };
+     reader.readAsDataURL(input.files[0]);
+   }
+ }
+</script>
+<script>
   $("#toggleMap").click(function(){
     $(this).attr("disabled", "disabled")
       $("#map").slideDown(0)
