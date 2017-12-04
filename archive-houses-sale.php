@@ -15,7 +15,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
 
-<div class="wrapper  bg-e8" id="archive-wrapper">
+<div class="wrapper bg-e8" id="archive-wrapper">
 	<?php get_template_part( 'filter-templates/houses-sale-bar' ); ?>
 	<?php get_template_part( 'filter-templates/houses-filters' ); ?>
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
