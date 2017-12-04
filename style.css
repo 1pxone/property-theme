@@ -670,6 +670,9 @@ div.preview {
 .fw-400 .btn {
     font-weight: 400 !important;
 }
+label {
+    font-size: 0.95em;
+}
 /*select#_whatfor {
     background: #dfdfdf;
     border-top-left-radius: 0.25rem;

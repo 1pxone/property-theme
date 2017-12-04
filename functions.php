@@ -83,14 +83,12 @@ if (isset( $_POST['cpt_nonce_field'] )
     'post_title'    => $_POST['cptTitle'],
     'post_content'  => $_POST['cptContent'],
     'post_status'   => 'pending',
-    'post_type' => $_POST['post_type'],
-    'meta_input' => array(
-        'name' => 'сотки',
-        'сотки' => 12
-    )
+    'post_type' => $_POST['cpt_post_type']
   );
   // insert the post into the database
   $cpt_id = wp_insert_post( $my_cptpost_args, $wp_error);
+  header("Location: /create?status=done&t=". $_POST['cpt_post_type']);
+  die();
 }
 
 
@@ -508,8 +506,10 @@ function my_pre_get_posts( $query ) {
 
 	// update meta query
 	$query->set('meta_query', $meta_query);
-
+  if ($orderargs){
     $query->set('orderby',$orderargs);
+  }
+
     $query->set('posts_per_page', '100');
 
 };
