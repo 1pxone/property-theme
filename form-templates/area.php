@@ -189,7 +189,7 @@
          <input type="hidden" name="latitude"  id="latitude">
          <input type="hidden" name="longitude" id="longitude">
          <span class="input-group-btn">
-           <button class="btn btn-more" type="button" id="toggleMap">Указать на карте</button>
+           <button class="btn btn-c-primary" type="button" id="toggleMap">Указать на карте</button>
          </span>
      </div>
    </div>
@@ -222,6 +222,6 @@
   </div>
 </div>
 <div class="col-12" >
-      <button type="submit" class="btn btn-more w-100 mb-5">Разместить</button>
+      <button type="submit" class="btn btn-c-primary w-100 mb-5">Разместить</button>
 </div>
 </div>

@@ -43,7 +43,7 @@ print_r($_GET);
             <div class="text-center pb-3">
               <div class="form-inline">
                 <div class="btn-group mr-3 circled">
-                    <a href="" class="btn circled btn-active btn-more" id="houses">Дома</a>
+                    <a href="" class="btn circled btn-active btn-c-primary" id="houses">Дома</a>
                     <a href="/townhouses" class="btn btn-inactive circled" id="townhouses">Таунхаусы</a>
                     <a href="/areas" class="btn circled btn-inactive" id="areas">Участки</a>
                 </div>

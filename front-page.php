@@ -109,7 +109,7 @@ Template Name: Главная
           <div class="col-6">
             <div class="d-inline float-right">
               <a href="/sale/houses?map=true" class="btn btn-c-primary btn-lg mr-1" id="_mapSearch">Показать на карте <i class="ion-ios-location"></i></a>
-              <a href="/sale/houses" class="btn btn-more btn-lg" id="_search">Поиск <i class="ion-android-search"></i></a>
+              <a href="/sale/houses" class="btn btn-c-primary btn-lg" id="_search">Поиск <i class="ion-android-search"></i></a>
             </div>
           </div>
 
@@ -178,9 +178,9 @@ Template Name: Главная
       <div class="col-12 col-sm-6">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class="d-inline float-right">
-          <a class="btn circled btn-more btn-lg fw-100 px-3" href="/sale/houses">Все объявления</a>
+          <a class="btn circled btn-c-primary btn-lg fw-100 px-3" href="/sale/houses">Все объявления</a>
           <small>или</small>
-          <a class="btn circled btn-more btn-lg fw-100 px-3" href="/create">Разместить объявление</a>
+          <a class="btn circled btn-c-primary btn-lg fw-100 px-3" href="/create">Разместить объявление</a>
         </div>
 
       </div>
@@ -209,7 +209,7 @@ Template Name: Главная
 
                 <p class="card-text">используя гибкие фильтры</p>
 
-                <a href="/rent/houses" class="btn circled btn-active btn-more">Все предложения</a>
+                <a href="/rent/houses" class="btn circled btn-active btn-c-primary">Все предложения</a>
               </div>
             </div>
         </div>
@@ -300,7 +300,7 @@ Template Name: Главная
                            '<br/>',
                            'Адрес: 119021, Москва, ул. Льва Толстого, 16',
                            '<br/>',
-                           '<a class="btn circled btn-more" href=' + cords[i].link + '>ПОДРОБНЕЕ</a>',
+                           '<a class="btn circled btn-c-primary" href=' + cords[i].link + '>ПОДРОБНЕЕ</a>',
                           //  '</address>'
                        ].join('')
                     }, {

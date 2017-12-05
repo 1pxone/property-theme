@@ -114,7 +114,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			        <a class="nav-link btn circled btn-secondary-outline fw-100 pb-0 px-0 " href="/create"><i class="ion-ios-telephone h4"></i></a>
 			      </li>
 			      <li class="nav-item active">
-			        <a class="nav-link btn btn-sm circled btn-more fw-100 px-3" href="/create">Разместить объявление <i class="ion-plus h6"></i></a>
+			        <a class="nav-link btn btn-sm circled btn-c-primary fw-100 px-3" href="/create">Разместить объявление <i class="ion-plus h6"></i></a>
 			      </li>
 	    		</ul>
 

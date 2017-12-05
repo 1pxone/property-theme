@@ -57,7 +57,7 @@ Template Post Type: houses
                     </span>
                   </p>
               <?php if( isset($_GET["secret"]) && $_GET["secret"] == get_field( 'secret' )) : ?>
-                <a href="tel:<?php the_field( 'phone' ); ?>" class="btn btn-more circled btn-block">
+                <a href="tel:<?php the_field( 'phone' ); ?>" class="btn btn-c-primary circled btn-block">
                   <?php
                     $str = strval(get_field( 'phone' ));
                     $str = '+'.substr($str, 0, 1).'('.substr($str, 1, 3).')'.substr($str, 4, 3).'-'.substr($str, 7, 2).'-'.substr($str, 9, 2);
@@ -65,7 +65,7 @@ Template Post Type: houses
                   ?>
                 </a>
               <?php else : ?>
-                <button class="btn btn-more circled btn-block" data-toggle="modal" data-target="#getPhone"><i class="icon ion-android-call"></i> Телефон владельца</button>
+                <button class="btn btn-c-primary circled btn-block" data-toggle="modal" data-target="#getPhone"><i class="icon ion-android-call"></i> Телефон владельца</button>
               <?php endif ?>
               </div>
           </div>
@@ -123,7 +123,7 @@ Template Post Type: houses
 
                     <p class="card-text">используя гибкие фильтры</p>
 
-                    <a href="/rent/houses" class="btn circled btn-active btn-more">Все предложения</a>
+                    <a href="/rent/houses" class="btn circled btn-active btn-c-primary">Все предложения</a>
                   </div>
                 </div>
             </div>
@@ -313,7 +313,7 @@ Template Post Type: houses
              										'<span> руб./в мес.</span> </p>',
              										 '<p class="card-text mb-1"><small>' + cords[i].name + '</small></p>',
              										 '<div class="text-center">',
-             										 '<a class="btn circled btn-sm btn-more btn-block" href=' + cords[i].link + '>Подробнее</a></div>',
+             										 '<a class="btn circled btn-sm btn-c-primary btn-block" href=' + cords[i].link + '>Подробнее</a></div>',
              		 						  '</div>'
              							 ].join('')
              	        }, {

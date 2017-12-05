@@ -59,7 +59,7 @@ Template Post Type: houses-sale
             <h4 class="card-title mb-0 h5"><small><?php the_title(); ?></small></h4>
             <p class="price"><?php the_field('price'); ?></p>
             <span class="address"><small><?php the_field('адрес'); ?></small></span>
-            <!-- <div class="d-flex justify-content-between card-bottom"><span class="dateAdded"></span> <button class="btn btn-more circled order">Подробнее</button> </div> -->
+            <!-- <div class="d-flex justify-content-between card-bottom"><span class="dateAdded"></span> <button class="btn btn-c-primary circled order">Подробнее</button> </div> -->
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ Template Post Type: houses-sale
             <?php else : ?>
 
 
-              <a href="#" class="btn btn-more circled">Показать номер
+              <a href="#" class="btn btn-c-primary circled">Показать номер
                 <span class="num">+7 (916) XXX-XX-XX</span>
               </a>
           <?php endif ?>
@@ -309,7 +309,7 @@ Template Post Type: houses-sale
                          '<br/>',
                          'Адрес: 119021, Москва, ул. Льва Толстого, 16',
                          '<br/>',
-                         '<a class="btn circled btn-more" href=' + cords[i].link + '>ПОДРОБНЕЕ</a>',
+                         '<a class="btn circled btn-c-primary" href=' + cords[i].link + '>ПОДРОБНЕЕ</a>',
                         //  '</address>'
                      ].join('')
                   }, {

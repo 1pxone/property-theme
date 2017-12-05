@@ -123,8 +123,8 @@
               </div>
               <div class="row justify-content-center">
                 <!-- <div class="btn-group w-100" role="group" aria-label="Basic example"> -->
-                  <button class="btn btn-danger-outline circled mr-3 " type="reset" id="reset">Сбросить фильтры <i class="icon ion-android-refresh"></i></button>
-                  <button class="btn btn-more circled  " type="submit" id="submit">Поиск <i class="icon ion-ios-search-strong"></i></button>
+                  <button class="btn btn-c-primary-o circled mr-3 " type="reset" id="reset">Сбросить фильтры <i class="icon ion-android-refresh"></i></button>
+                  <button class="btn btn-c-primary circled  " type="submit" id="submit">Поиск <i class="icon ion-ios-search-strong"></i></button>
                 <!-- </div> -->
               </div>
         </form>

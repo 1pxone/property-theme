@@ -21,8 +21,8 @@
               <?php endif; ?>
             </div>
             <div class="col-12">
-              <a href="/" class="btn btn-sm circled btn-more fw-100 px-3">Вернуться на главную</a>
-              <a class="btn btn-sm circled btn-more fw-100 px-3" href="/create">Разместить еще одно объявление <i class="ion-plus h6"></i></a>
+              <a href="/" class="btn btn-sm circled btn-c-primary fw-100 px-3">Вернуться на главную</a>
+              <a class="btn btn-sm circled btn-c-primary fw-100 px-3" href="/create">Разместить еще одно объявление <i class="ion-plus h6"></i></a>
             </div>
         </div>
     </div>
