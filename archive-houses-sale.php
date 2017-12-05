@@ -45,8 +45,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			<?php understrap_pagination(); ?>
 			</div>
 		</div>
-	</div>
-</div>
+
 <?php get_template_part( 'mapArchive' ); ?>
 
 <?php get_footer(); ?>

@@ -70,7 +70,7 @@ Template Post Type: houses
       </div>
   <div class="container">
     <div class="row">
-      <div class="col-12 mainblock  pr-md-0" data-lat="<?php the_field( 'широта' ); ?>" data-lon="<?php the_field( 'долгота' ); ?>" data-addr="<?php the_field('адрес'); ?>" data-link="<?php the_permalink(); ?>" data-price="<?php echo number_format(get_field('price'), 0, ',', ' ')  ?>" data-img="<?php echo the_post_thumbnail_url(); ?>">
+      <div class="col-12 mainblock px-2" data-lat="<?php the_field( 'широта' ); ?>" data-lon="<?php the_field( 'долгота' ); ?>" data-addr="<?php the_field('адрес'); ?>" data-link="<?php the_permalink(); ?>" data-price="<?php echo number_format(get_field('price'), 0, ',', ' ')  ?>" data-img="<?php echo the_post_thumbnail_url(); ?>">
         <div class="card item obj mb-3">
 
           <div class="row card-body">
@@ -114,7 +114,7 @@ Template Post Type: houses
               <?php the_post(); the_content(); ?>
             </div>
             <div class="col-md-4">
-              <table class="table table-responsive">
+              <table class="table">
                 <tbody>
                   <tr>
                     <td>Газ</td>
@@ -145,11 +145,11 @@ Template Post Type: houses
       </div>
     </div>
 
-    <div class="row px-3 pt-3 pb-5">
+    <div class="row px-3 py-5 ">
       <div class="col-12 px-2">
            <h2 class="pb-3 fw-slim h1">Последние предложения</h2>
       </div>
-        <?php $loop = new WP_Query(array( 'post_type' => array('houses'),'showposts' => '3')); if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
+        <?php $loop = new WP_Query(array( 'post_type' => array('houses-sale'),'showposts' => '3')); if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
             <?php get_template_part( 'loop-templates/houses', get_post_format() ); ?>
             <?php endwhile; ?>
             <?php endif; wp_reset_postdata(); ?>
@@ -158,10 +158,7 @@ Template Post Type: houses
                   <div class="card-body text-center d-flex flex-column justify-content-around">
                     <i class="pointicon flaticon-house-1" id="findyours"></i><br/>
                     <h5 class="card-title fw-slim">Найдите свой дом</h5>
-
-
                     <p class="card-text">используя гибкие фильтры</p>
-
                     <a href="/rent/houses" class="btn circled btn-active btn-c-primary">Все предложения</a>
                   </div>
                 </div>

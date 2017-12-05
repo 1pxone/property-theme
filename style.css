@@ -37,13 +37,12 @@ The dependencies can be found in /src/ after running "gulp copy-assets" terminal
 
 body{
   font-family: 'Fira Sans', sans-serif !important;
-}
-body {
-    line-height: 1.2 !important;
-    font-weight: 300 !important;
+  background-color: #e8e8e8  !important;
+  line-height: 1.2 !important;
+  font-weight: 300 !important;
 }
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 .fw-slim{
   font-weight: 100 !important;
@@ -602,6 +601,11 @@ ul#main-menu-mobile a {
 button:focus {
     outline: 0 !important;
 }
+
+.modal-lg {
+    max-width: 90vw !important;
+}
+
 @media(max-width:767px){
   ul#createBtn {
     flex-direction: row !important;

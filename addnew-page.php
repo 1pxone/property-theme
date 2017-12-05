@@ -3,7 +3,7 @@
 <?php get_header(); ?>
 <?php if(isset($_GET['status']) && $_GET['status'] == 'done') : ?>
   <div class="bg-e8 fw-400 whenDone">
-      <div class="container pt-5 ">
+      <div class="container py-5 ">
         <div class="row">
             <div class="col-12">
               <?php if(isset($_GET['t']) && $_GET['t'] == 'houses') : ?>
@@ -252,19 +252,38 @@
       imgs = imgs + `<img src=${data} width="200px"/>`;
     };
     function makeData(name,data){
-      newData = newData + `<p>${name}: <b>${data}</b></p><br/>`;
+      newData = newData + `<p>${name}: <b>${data}</b></p>`;
     };
     for (var i=0; i<serialized.length; i++) {
-      if (regexp.test(serialized[i].name) && serialized[i].value){
+      // if (regexp.test(serialized[i].name)){
+      if (serialized[i].name === "uploadImg0" ||
+          serialized[i].name === "uploadImg1" ||
+          serialized[i].name === "uploadImg2" ||
+          serialized[i].name === "uploadImg3" ||
+          serialized[i].name === "uploadImg4" ||
+          serialized[i].name === "uploadImg5" ||
+          serialized[i].name === "uploadImg6" ||
+          serialized[i].name === "uploadImg7" ||
+          serialized[i].name === "uploadImg8" ||
+          serialized[i].name === "uploadImg9" ||
+          serialized[i].name === "uploadImg10" ||
+          serialized[i].name === "uploadImg11" ||
+          serialized[i].name === "uploadImg12" ||
+          serialized[i].name === "uploadImg13" ||
+          serialized[i].name === "uploadImg14"
+        ){
         makeImg(serialized[i].value);
-      } else if(serialized[i].value != "") {
+        console.log(`${serialized[i].name} - картинка: ${regexp.test(serialized[i].name)}` )
+      } else {
         makeData(serialized[i].name, serialized[i].value);
+        console.log(`${serialized[i].name} - НЕ картинка` )
       }
     };
     var tpl = `<div>${newData}<hr />${imgs}</div>`;
     $("#post_type").val(post_types[postType*1]);
     $("#cptContent").val(tpl);
     $("#submitMe").submit();
+    // console.log(tpl);
   });
   </script>
 <?php endif; ?>

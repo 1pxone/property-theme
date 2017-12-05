@@ -114,7 +114,7 @@ Template Post Type: houses
               <?php the_post(); the_content(); ?>
             </div>
             <div class="col-md-4">
-              <table class="table table-responsive">
+              <table class="table">
                 <tbody>
                   <tr>
                     <td>Газ</td>
@@ -145,7 +145,7 @@ Template Post Type: houses
       </div>
     </div>
 
-    <div class="row px-3 pt-3 pb-5">
+    <div class="row px-3 py-5 ">
       <div class="col-12 px-2">
            <h2 class="pb-3 fw-slim h1">Последние предложения</h2>
       </div>
