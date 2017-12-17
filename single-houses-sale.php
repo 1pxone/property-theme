@@ -90,7 +90,7 @@ Template Post Type: houses
                 <p class="price price-obj mb-3"><?php echo number_format(get_field('price'), 0, ',', ' ')  ?>
                     <span>
                       <?php if (is_numeric ( get_field('price') )): ?>
-                        руб./в мес.
+                        руб.
                         <?php else: ?>
                         <?php endif ?>
                     </span>
