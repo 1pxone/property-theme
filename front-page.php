@@ -11,33 +11,33 @@ Template Name: Главная
 <div class="container-fluid" id="points">
   <div class="container text-center text-white pt-md-5">
     <div class="row pt-md-5 mt-md-5">
-      <div class="col-12 col-sm-12 col-lg-4 col-xl-4">
+      <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
           <i class="pointicon flaticon-house-1"></i>
         <h5 class="mt-2">Первый сайт загородной недвижимости строго без риелторов.</h5>
       </div>
-      <div class="col-12 col-sm-12 col-lg-4 col-xl-4">
+      <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
           <i class="pointicon flaticon-wallet"></i>
         <h5 class="mt-2">Комиссия риелтору остается в вашем кармане.</h5>
       </div>
-      <div class="col-12 col-sm-12 col-lg-4 col-xl-4">
+      <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
           <i class="pointicon flaticon-house"></i>
         <h5 class="mt-2">Вы общаетесь с собственником напрямую без посредников.</h5>
       </div>
     </div>
     <div class="row mt-md-5">
-        <div class="col-12 col-sm-12 col-lg-2 col-xl-2">
+        <div class="col-6 col-sm-6 col-lg-2 col-xl-2 d-none">
       </div>
-      <div class="col-12 col-sm-12 col-lg-4 col-xl-4">
+      <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
           <i class="pointicon flaticon-house-4"></i>
         <h5 class="mt-2">Мы регулярно обновляем базу самостоятельно.</h5>
       </div>
-      <div class="col-12 col-sm-12 col-lg-4 col-xl-4">
+      <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
           <i class="pointicon flaticon-piggy-bank"></i>
         <h5>Размещение объявления бесплатно.</h5>
       </div>
     </div>
     <div class="row py-md-5">
-      <div class="mt-5" id="querybar">
+      <div class="mt-5 d-none d-md-block" id="querybar">
         <div id="querywrapper">
           <div class="input-group ">
               <select  class="form-control form-control-lg mr-2"  name="for" id="_whatfor">
@@ -106,6 +106,96 @@ Template Name: Главная
           </div>
         </div>
       </div>
+      <!--  mobile search-->
+      <div class="mt-5 d-block d-md-none d-lg-none  d-xl-none" id="querybar_mobile">
+        <div id="querywrapper_mobile">
+          <div class="row">
+            <div class="col-6 pr-0">
+              <select  class="form-control form-control-lg mr-2"  name="for" id="_whatfor_mobile">
+                  <?php $whatfor = array(
+                         "sale" => "Купить",
+                         "rent" => "Снять"
+                      );
+                  foreach($whatfor as $key => $val): ?>
+                      <option value="<?php echo $key; ?>"><?php echo $val; ?></option>
+                  <?php endforeach; ?>
+              </select>
+            </div>
+            <div class="col-6 pl-3">
+              <select  class="form-control form-control-lg mr-2"  name="type" id="_type_mobile">
+                  <?php $types = array(
+                         "houses" => "Дом",
+                         "areas" => "Участок",
+                         "townhouses" => "Таунхаус"
+                      );
+                  foreach($types as $key => $val): ?>
+                      <option value="<?php echo $key; ?>"><?php echo $val; ?></option>
+                  <?php endforeach; ?>
+                </select>
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-sm btn-link" id="moreParamsBtn">Больше параметров</button>
+            </div>
+            <script>
+              $("#moreParamsBtn").click(function() {
+                $("#moreParams").slideToggle(300)
+              })
+            </script>
+            <div id="moreParams" class="row" style="display:none;">
+            <div class="col-6 pr-2">
+              <input type="text" class="form-control form-control-lg rounded-left" aria-label="Text input with dropdown button" placeholder="от, руб." id="_priceFrom_mobile">
+            </div>
+            <div class="col-6 pl-2">
+            <input type="text" class="form-control form-control-lg mr-2 rounded-right" aria-label="Text input with dropdown button" placeholder="до, руб." id="_priceTo_mobile">
+          </div>
+            <div class="col-12 mt-3">
+              <select  class="form-control form-control-lg"  name="road" id="_road_mobile">
+                  <option value="" disabled selected>Шоссе</option>
+                  <?php $roads= array(
+                         "Алтуфьевское",
+                         "Боровское шоссе",
+                          "Варшавское",
+                          "Волоколамское",
+                          "Дмитровское",
+                          "Ильинское",
+                          "Калужское",
+                          "Каширское",
+                          "Киевское",
+                          "Куркинское",
+                          "Ленинградское",
+                          "Минское",
+                          "Можайское",
+                          "Новорижское",
+                          "Новорязанское",
+                          "Осташковское",
+                          "Пятницкое",
+                          "Рублево-Успенское",
+                          "Симферопольское",
+                          "Сколковское",
+                          "Ярославское"
+                      );
+                  foreach($roads as $key): ?>
+                      <option value="<?php echo $key; ?>"><?php echo $key; ?></option>
+                  <?php endforeach; ?>
+              </select>
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+        <div class="row">
+          <!-- <div class="col-12 text-left text-white" id="populars">
+            <a href="#">Дома до 5 млн.</a><br />
+            <a href="#">Участки по Новой риге</a>
+          </div> -->
+          <div class="col-12">
+            <div class="d-inline float-right">
+              <a href="/sale/houses?map=true" class="btn btn-c-primary btn-lg mr-1" id="_mapSearch_mobile">Показать на карте <i class="ion-ios-location"></i></a>
+              <a href="/sale/houses" class="btn btn-c-primary btn-lg" id="_search_mobile">Поиск <i class="ion-android-search"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
 <script>
@@ -115,6 +205,12 @@ Template Name: Главная
   var _priceFrom = $('#_priceFrom');
   var _priceTo = $('#_priceTo');
   var _road = $('#_road');
+
+  var _type_mobile = $('#_type_mobile');
+  var _whatfor_mobile = $('#_whatfor_mobile');
+  var _priceFrom_mobile = $('#_priceFrom_mobile');
+  var _priceTo_mobile = $('#_priceTo_mobile');
+  var _road_mobile = $('#_road_mobile');
   // query args
   var q_type = "houses";
   var q_whatfor = "sale";
@@ -124,6 +220,9 @@ Template Name: Главная
   // targets
   var t_search = $("#_search");
   var t_mapSearch = $("#_mapSearch");
+
+  var t_search_mobile = $("#_search_mobile");
+  var t_mapSearch_mobile = $("#_mapSearch_mobile");
 
   _type.change(function(){
     q_type = $(this).val();
@@ -145,10 +244,32 @@ Template Name: Главная
     q_road = $(this).val();
     makeQuery();
   });
+  _type_mobile.change(function(){
+    q_type = $(this).val();
+    makeQuery();
+  });
+  _whatfor_mobile.change(function(){
+    q_whatfor = $(this).val();
+    makeQuery();
+  });
+  _priceFrom_mobile.change(function(){
+    q_priceFrom = $(this).val();
+    makeQuery();
+  });
+  _priceTo_mobile.change(function(){
+    q_priceTo = $(this).val();
+    makeQuery();
+  });
+  _road_mobile.change(function(){
+    q_road = $(this).val();
+    makeQuery();
+  });
 
   function makeQuery(){
       t_search.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}`);
       t_mapSearch.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}&map=true`);
+      t_search_mobile.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}`);
+      t_mapSearch_mobile.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}&map=true`);
       return `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}`
   }
 

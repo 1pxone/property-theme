@@ -22,9 +22,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link href="<?php echo get_template_directory_uri(); ?>/style.css?v=0.1" rel="stylesheet">
 	<link href="<?php echo get_template_directory_uri(); ?>/animate.css" rel="stylesheet">
 	<link href="<?php echo get_template_directory_uri(); ?>/css/normalize.css" rel="stylesheet">
-	<link href="<?php echo get_template_directory_uri(); ?>/css/ion.rangeSlider.css" rel="stylesheet">
+	<!-- <link href="<?php echo get_template_directory_uri(); ?>/css/ion.rangeSlider.css" rel="stylesheet"> -->
   <link href="<?php echo get_template_directory_uri(); ?>/css/flaticon.css" rel="stylesheet">
-	<link href="<?php echo get_template_directory_uri(); ?>/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+	<!-- <link href="<?php echo get_template_directory_uri(); ?>/css/ion.rangeSlider.skinFlat.css" rel="stylesheet"> -->
 	<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700,900&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -32,8 +32,8 @@ $container = get_theme_mod( 'understrap_container_type' );
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/slick/slick-theme.css"/>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/slick/slick.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/ion.rangeSlider.js" type="text/javascript"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/dropzone.js" type="text/javascript"></script>
+	<!-- <script src="<?php echo get_template_directory_uri(); ?>/js/ion.rangeSlider.js" type="text/javascript"></script> -->
+	<!-- <script src="<?php echo get_template_directory_uri(); ?>/js/dropzone.js" type="text/javascript"></script> -->
 	<script src="<?php echo get_template_directory_uri(); ?>/js/moment.js" type="text/javascript"></script>
 	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
@@ -47,8 +47,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<!-- ******************* The Navbar Area ******************* -->
 	<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
 
-		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content',
-		'understrap' ); ?></a>
+		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content','understrap' ); ?></a>
 
 		<nav class="navbar navbar-expand-md navbar-white bg-white">
 

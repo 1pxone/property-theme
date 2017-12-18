@@ -1399,3 +1399,10 @@ p.price.price-obj {
     padding: 10px;
     border-radius: 200px;
 }
+
+div#querybar_mobile #querywrapper_mobile {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 10px;
+    border-radius: 0.25rem;
+    margin-bottom: 8px !important;
+}
