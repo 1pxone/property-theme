@@ -1406,3 +1406,13 @@ div#querybar_mobile #querywrapper_mobile {
     border-radius: 0.25rem;
     margin-bottom: 8px !important;
 }
+div#querybar_mobile {
+    width: 100%;
+}
+button#moreParamsBtn {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px dotted white;
+    padding: 0;
+    margin: 10px 0 5px 0;
+}

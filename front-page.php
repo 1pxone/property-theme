@@ -25,7 +25,7 @@ Template Name: Главная
       </div>
     </div>
     <div class="row mt-md-5">
-        <div class="col-6 col-sm-6 col-lg-2 col-xl-2 d-none">
+        <div class="col-6 col-sm-6 col-lg-2 col-xl-2 d-none d-lg-block">
       </div>
       <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
           <i class="pointicon flaticon-house-4"></i>
@@ -36,7 +36,7 @@ Template Name: Главная
         <h5>Размещение объявления бесплатно.</h5>
       </div>
     </div>
-    <div class="row py-md-5">
+    <div class="row py-5">
       <div class="mt-5 d-none d-md-block" id="querybar">
         <div id="querywrapper">
           <div class="input-group ">
@@ -110,7 +110,7 @@ Template Name: Главная
       <div class="mt-5 d-block d-md-none d-lg-none  d-xl-none" id="querybar_mobile">
         <div id="querywrapper_mobile">
           <div class="row">
-            <div class="col-6 pr-0">
+            <div class="col-6  pr-2">
               <select  class="form-control form-control-lg mr-2"  name="for" id="_whatfor_mobile">
                   <?php $whatfor = array(
                          "sale" => "Купить",
@@ -121,7 +121,7 @@ Template Name: Главная
                   <?php endforeach; ?>
               </select>
             </div>
-            <div class="col-6 pl-3">
+            <div class="col-6 pl-2">
               <select  class="form-control form-control-lg mr-2"  name="type" id="_type_mobile">
                   <?php $types = array(
                          "houses" => "Дом",
@@ -135,14 +135,12 @@ Template Name: Главная
               </div>
             </div>
             <div class="text-center">
-              <button class="btn btn-sm btn-link" id="moreParamsBtn">Больше параметров</button>
+              <button class="btn btn-sm btn-link" id="moreParamsBtn">Больше параметров <i class="ion-ios-arrow-down"></i></button>
             </div>
-            <script>
-              $("#moreParamsBtn").click(function() {
-                $("#moreParams").slideToggle(300)
-              })
-            </script>
-            <div id="moreParams" class="row" style="display:none;">
+            <div id="moreParams" class="row mt-2" style="display:none;">
+              <div class="col-12">
+                <label>Цена, руб.:</label>
+              </div>
             <div class="col-6 pr-2">
               <input type="text" class="form-control form-control-lg rounded-left" aria-label="Text input with dropdown button" placeholder="от, руб." id="_priceFrom_mobile">
             </div>
@@ -182,98 +180,14 @@ Template Name: Главная
               </div>
             </div>
           </div>
-        <!-- </div> -->
         <div class="row">
-          <!-- <div class="col-12 text-left text-white" id="populars">
-            <a href="#">Дома до 5 млн.</a><br />
-            <a href="#">Участки по Новой риге</a>
-          </div> -->
           <div class="col-12">
-            <div class="d-inline float-right">
-              <a href="/sale/houses?map=true" class="btn btn-c-primary btn-lg mr-1" id="_mapSearch_mobile">Показать на карте <i class="ion-ios-location"></i></a>
-              <a href="/sale/houses" class="btn btn-c-primary btn-lg" id="_search_mobile">Поиск <i class="ion-android-search"></i></a>
-            </div>
+              <a href="/sale/houses" class="btn btn-lg btn-block w-100 btn-c-primary" id="_search_mobile">Поиск <i class="ion-android-search"></i></a>
           </div>
         </div>
       </div>
   </div>
 </div>
-<script>
-  // inputs
-  var _type = $('#_type');
-  var _whatfor = $('#_whatfor');
-  var _priceFrom = $('#_priceFrom');
-  var _priceTo = $('#_priceTo');
-  var _road = $('#_road');
-
-  var _type_mobile = $('#_type_mobile');
-  var _whatfor_mobile = $('#_whatfor_mobile');
-  var _priceFrom_mobile = $('#_priceFrom_mobile');
-  var _priceTo_mobile = $('#_priceTo_mobile');
-  var _road_mobile = $('#_road_mobile');
-  // query args
-  var q_type = "houses";
-  var q_whatfor = "sale";
-  var q_priceFrom = "";
-  var q_priceTo = "";
-  var q_road = "";
-  // targets
-  var t_search = $("#_search");
-  var t_mapSearch = $("#_mapSearch");
-
-  var t_search_mobile = $("#_search_mobile");
-  var t_mapSearch_mobile = $("#_mapSearch_mobile");
-
-  _type.change(function(){
-    q_type = $(this).val();
-    makeQuery();
-  });
-  _whatfor.change(function(){
-    q_whatfor = $(this).val();
-    makeQuery();
-  });
-  _priceFrom.change(function(){
-    q_priceFrom = $(this).val();
-    makeQuery();
-  });
-  _priceTo.change(function(){
-    q_priceTo = $(this).val();
-    makeQuery();
-  });
-  _road.change(function(){
-    q_road = $(this).val();
-    makeQuery();
-  });
-  _type_mobile.change(function(){
-    q_type = $(this).val();
-    makeQuery();
-  });
-  _whatfor_mobile.change(function(){
-    q_whatfor = $(this).val();
-    makeQuery();
-  });
-  _priceFrom_mobile.change(function(){
-    q_priceFrom = $(this).val();
-    makeQuery();
-  });
-  _priceTo_mobile.change(function(){
-    q_priceTo = $(this).val();
-    makeQuery();
-  });
-  _road_mobile.change(function(){
-    q_road = $(this).val();
-    makeQuery();
-  });
-
-  function makeQuery(){
-      t_search.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}`);
-      t_mapSearch.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}&map=true`);
-      t_search_mobile.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}`);
-      t_mapSearch_mobile.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}&map=true`);
-      return `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}`
-  }
-
-</script>
 </div>
 <div class="container-fluid py-5" id="detailed">
   <div class="container">
@@ -283,7 +197,6 @@ Template Name: Главная
     <?php  }  else echo "<h2>Записей нет.</h2>";?>
   </div>
 </div>
-
 <div class="container-fluid bg-e8 py-5" id="main-page">
   <div class="container" id="main-page">
       <div class="col-12 px-0">
@@ -301,10 +214,7 @@ Template Name: Главная
               <div class="card-body text-center d-flex flex-column justify-content-around">
                 <i class="pointicon flaticon-house-1" id="findyours"></i><br/>
                 <h5 class="card-title fw-slim">Найдите свой дом</h5>
-
-
                 <p class="card-text">используя гибкие фильтры</p>
-
                 <a href="/rent/houses" class="btn circled btn-active btn-c-primary">Все предложения</a>
               </div>
             </div>
@@ -312,104 +222,89 @@ Template Name: Главная
     </div>
     </div>
   </div>
-<!--</div>-->
+  <script>
+    var paramsToggled = false;
+    $("#moreParamsBtn").click(function() {
+      paramsToggled = !paramsToggled;
+      if(paramsToggled){
+        $(this).html(`Меньше параметров <i class="ion-ios-arrow-up"></i>`)
+      }else{
+        $(this).html(`Больше параметров <i class="ion-ios-arrow-down"></i>`)
+      }
+      $("#moreParams").slideToggle(300);
+    });
+    // inputs
+    var _type = $('#_type');
+    var _whatfor = $('#_whatfor');
+    var _priceFrom = $('#_priceFrom');
+    var _priceTo = $('#_priceTo');
+    var _road = $('#_road');
 
-             <script>
-            //  $("")
-              //find max and min in array
-              Array.prototype.max = function() {
-                return Math.max.apply(null, this);
-              };
+    var _type_mobile = $('#_type_mobile');
+    var _whatfor_mobile = $('#_whatfor_mobile');
+    var _priceFrom_mobile = $('#_priceFrom_mobile');
+    var _priceTo_mobile = $('#_priceTo_mobile');
+    var _road_mobile = $('#_road_mobile');
+    // query args
+    var q_type = "houses";
+    var q_whatfor = "sale";
+    var q_priceFrom = "";
+    var q_priceTo = "";
+    var q_road = "";
+    // targets
+    var t_search = $("#_search");
+    var t_mapSearch = $("#_mapSearch");
 
-              Array.prototype.min = function() {
-                return Math.min.apply(null, this);
-              };
+    var t_search_mobile = $("#_search_mobile");
+    var t_mapSearch_mobile = $("#_mapSearch_mobile");
 
+    _type.change(function(){
+      q_type = $(this).val();
+      makeQuery();
+    });
+    _whatfor.change(function(){
+      q_whatfor = $(this).val();
+      makeQuery();
+    });
+    _priceFrom.change(function(){
+      q_priceFrom = $(this).val();
+      makeQuery();
+    });
+    _priceTo.change(function(){
+      q_priceTo = $(this).val();
+      makeQuery();
+    });
+    _road.change(function(){
+      q_road = $(this).val();
+      makeQuery();
+    });
+    _type_mobile.change(function(){
+      q_type = $(this).val();
+      makeQuery();
+    });
+    _whatfor_mobile.change(function(){
+      q_whatfor = $(this).val();
+      makeQuery();
+    });
+    _priceFrom_mobile.change(function(){
+      q_priceFrom = $(this).val();
+      makeQuery();
+    });
+    _priceTo_mobile.change(function(){
+      q_priceTo = $(this).val();
+      makeQuery();
+    });
+    _road_mobile.change(function(){
+      q_road = $(this).val();
+      makeQuery();
+    });
 
-              function hideMap() {
-                $('#filterresult').toggleClass('hidden animated fadeIn');
-                $('#mapWrapper').removeClass('animated fadeOut');
-                $('#mapWrapper').toggleClass('hidden');
-              };
-              $('#toggleMap').on('click', function(){
-                // $('#mapWrapper').toggleClass('hidden animated fadeIn');
-                if($('#mapWrapper').hasClass('hidden')){
-                  $('#toggleMap').html('Списком <i class="fa fa-list" aria-hidden="true"></i>');
-                  $('#filterresult').removeClass('animated fadeIn');
-                  $('#mapWrapper').toggleClass('hidden animated fadeIn');
-                  $('#filterresult').toggleClass('hidden');
-                  initMap();
-                } else {
-                  $('#toggleMap').html('На карте <i class="fa fa-map-marker" aria-hidden="true"></i>');
-                  $('#mapWrapper').toggleClass('fadeIn fadeOut');
-                  $('#filterresult').toggleClass('hidden animated fadeIn');
-                  $('#mapWrapper').removeClass('animated fadeOut');
-                  $('#mapWrapper').toggleClass('hidden');
-                  // setTimeout(hideMap, 500);
-                }
-
-              });
-
-            function initMap(){
-               var cords = [];
-               $.each($('.equalheight'),function(){
-                  var obj = {
-                    cords:[],
-                    name:"",
-                    link:"",
-                    img:"",
-                    description:"",
-                    price:"",
-                  };
-                  var that = $(this);
-                  obj.cords.push(that.attr('lon'),that.attr('lat'));
-                  obj.name = that.attr('data');
-                  obj.link = that.attr('link');
-                  obj.img = that.attr('img');
-                  cords.push(obj);
-                }
-               );
-
-              ymaps.ready(init);
-              function init() {
-                var myMap = new ymaps.Map("map", {
-                        center: [55.76, 37.64],
-                        zoom: 10
-                    }, {
-                        searchControlProvider: 'yandex#search'
-                    });
-                  for(var i = 0; i<cords.length; i++){
-                  myMap.geoObjects
-                  .add(new ymaps.Placemark(
-
-                      cords[i].cords, {
-                        // balloonContent: cords[0].name
-
-                        balloonContentHeader: "Балун метки",
-                        // balloonContentBody: "Содержимое <em>балуна</em> метки",
-                        balloonContentFooter: "Подвал",
-                        hintContent: "Хинт метки",
-                        balloonContentBody: [
-                          //  '<address>',
-                           '<img class="img-fluid" width="30%" src=' + cords[i].img + ' />',
-                           '<br /><strong>' + cords[i].name + '</strong>',
-                           '<br/>',
-                           'Адрес: 119021, Москва, ул. Льва Толстого, 16',
-                           '<br/>',
-                           '<a class="btn circled btn-c-primary" href=' + cords[i].link + '>ПОДРОБНЕЕ</a>',
-                          //  '</address>'
-                       ].join('')
-                    }, {
-                        preset: 'islands#icon',
-                        iconColor: '#0095b6'
-                    }
-
-                  )
-                )};
-                }
-              };
-             </script>
-
-
-            <?php get_footer(); ?>
-                <!-- Ваш файл footer.php -->
+    function makeQuery(){
+        t_search.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}`);
+        t_mapSearch.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}&map=true`);
+        t_search_mobile.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}`);
+        // t_mapSearch_mobile.attr("href", `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}&map=true`);
+        return `/${q_whatfor}/${q_type}/?price_min=${q_priceFrom}&price_max=${q_priceTo}&road=${q_road}`
+    }
+  </script>
+<?php get_footer(); ?>
