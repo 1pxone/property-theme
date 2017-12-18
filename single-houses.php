@@ -6,10 +6,6 @@ Template Post Type: houses
 ?>
 
     <?php get_header(); ?>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/swipebox/css/swipebox.css"/>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/swipebox/js/jquery.swipebox.js"></script>
       <div class="container-fluid px-0">
@@ -122,33 +118,28 @@ Template Post Type: houses
                 <span class="border-r px-2"> <?php the_field('сотки'); ?> сот. </span>
                 <span class="pl-2"> <?php the_field('км_от_мкад'); ?> км </span>
               </p>
-              <p class="">
+              <p>
                 <a href="#map">
                   <small>
                     <i class="ion-ios-location"></i>
                     <?php if ( get_field( 'шоссе') ) { ?>
-                    <?php the_field('шоссе'); ?> ш.,
+                      <?php the_field('шоссе'); ?> ш.,
                     <?php } ?>
                     <?php if ( get_field( 'область') ) { ?>
-                    <?php the_field( 'область' ); ?> обл.,
+                      <?php the_field( 'область' ); ?> обл.,
                     <?php } ?>
                     <?php if ( get_field( 'поселок') ) { ?>
-                    <?php the_field( 'поселок' ); ?>,
+                      <?php the_field( 'поселок' ); ?>,
                     <?php } ?>
                     <?php if ( get_field( 'адрес') ) { ?>
-                    <?php the_field( 'адрес' ); ?>
+                      <?php the_field( 'адрес' ); ?>
                     <?php } ?>
-
-
-
-
                   </small>
                 </a>
               </p>
             </div>
-            <div class=" col-lg-3 d-md-none d-none d-lg-block">
-              </div>
-              <div class="col-md-6 col-lg-4">
+            <div class=" col-lg-3 d-md-none d-none d-lg-block"></div>
+            <div class="col-md-6 col-lg-4">
                 <p class="price price-obj mb-2"><?php echo number_format(get_field('price'), 0, ',', ' ')  ?>
                     <span>
                       <?php if (is_numeric ( get_field('price') )): ?>

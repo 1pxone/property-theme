@@ -17,14 +17,11 @@ Template Name: Главная
       </div>
       <div class="col-12 col-sm-12 col-lg-4 col-xl-4">
           <i class="pointicon flaticon-wallet"></i>
-        <h5 class="mt-2">Комиссия риелтору
-остается в вашем кармане.</h5>
+        <h5 class="mt-2">Комиссия риелтору остается в вашем кармане.</h5>
       </div>
       <div class="col-12 col-sm-12 col-lg-4 col-xl-4">
           <i class="pointicon flaticon-house"></i>
-        <h5 class="mt-2">Вы общаетесь с
-собственником напрямую
-без посредников.</h5>
+        <h5 class="mt-2">Вы общаетесь с собственником напрямую без посредников.</h5>
       </div>
     </div>
     <div class="row mt-md-5">
@@ -32,15 +29,12 @@ Template Name: Главная
       </div>
       <div class="col-12 col-sm-12 col-lg-4 col-xl-4">
           <i class="pointicon flaticon-house-4"></i>
-        <h5 class="mt-2">Мы регулярно обновляем базу
-самостоятельно.</h5>
+        <h5 class="mt-2">Мы регулярно обновляем базу самостоятельно.</h5>
       </div>
       <div class="col-12 col-sm-12 col-lg-4 col-xl-4">
           <i class="pointicon flaticon-piggy-bank"></i>
-        <h5>Размещение объявления
-бесплатно.</h5>
+        <h5>Размещение объявления бесплатно.</h5>
       </div>
-
     </div>
     <div class="row py-md-5">
       <div class="mt-5" id="querybar">
@@ -67,8 +61,6 @@ Template Name: Главная
               </select>
             <input type="text" class="form-control form-control-lg rounded-left" aria-label="Text input with dropdown button" placeholder="от, руб." id="_priceFrom">
             <input type="text" class="form-control form-control-lg mr-2 rounded-right" aria-label="Text input with dropdown button" placeholder="до, руб." id="_priceTo">
-            <!-- <span class="input-group-addon mr-2 rounded-right border-0">руб</span> -->
-
               <select  class="form-control form-control-lg"  name="road" id="_road">
                   <option value="" disabled selected>Шоссе</option>
                   <?php $roads= array(
@@ -112,9 +104,7 @@ Template Name: Главная
               <a href="/sale/houses" class="btn btn-c-primary btn-lg" id="_search">Поиск <i class="ion-android-search"></i></a>
             </div>
           </div>
-
         </div>
-
       </div>
   </div>
 </div>
@@ -167,15 +157,9 @@ Template Name: Главная
 <div class="container-fluid py-5" id="detailed">
   <div class="container">
     <?php if( have_posts() ){ while( have_posts() ){ the_post(); ?>
-                                            <div <?php post_class(); ?> id="post-
-                                                <?php the_ID(); ?>">
-                                                    <?php the_content(); ?>
-                                            </div>
-                                            <?php } /* конец while */ ?>
-                                                <?php
-                                                } // конец if
-                                                else
-                                                    echo "<h2>Записей нет.</h2>";?>
+      <div <?php post_class(); ?> id="post-<?php the_ID(); ?>"><?php the_content(); ?></div>
+      <?php } /* конец while */ ?>
+    <?php  }  else echo "<h2>Записей нет.</h2>";?>
   </div>
 </div>
 
