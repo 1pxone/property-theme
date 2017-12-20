@@ -109,7 +109,6 @@ Template Post Type: houses
     <div class="row">
       <div class="col-12 mainblock  pr-md-0" data-lat="<?php the_field( 'широта' ); ?>" data-lon="<?php the_field( 'долгота' ); ?>" data-addr="<?php the_field('адрес'); ?>" data-link="<?php the_permalink(); ?>" data-price="<?php echo number_format(get_field('price'), 0, ',', ' ')  ?>" data-img="<?php echo the_post_thumbnail_url(); ?>">
         <div class="card item obj mb-3">
-
           <div class="row card-body">
             <div class="col-md-6 col-lg-5">
               <p class="obj-info ">

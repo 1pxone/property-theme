@@ -114,8 +114,8 @@ Template Post Type: houses
             <div class="col-md-6 col-lg-5">
               <p class="obj-info ">
                 <span class="border-r pr-2"> <?php the_field( 'площадь' ); ?> м² </span>
-                <span class="border-r px-2"> <?php the_field( 'этажей' ); ?> эт. </span>
                 <span class="border-r px-2"> <?php the_field('сотки'); ?> сот. </span>
+                <span class="border-r px-2"> <?php the_field( 'этажей' ); ?> эт. </span>
                 <span class="pl-2"> <?php the_field('км_от_мкад'); ?> км </span>
               </p>
               <p>
