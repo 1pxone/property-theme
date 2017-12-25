@@ -439,6 +439,12 @@ button.slick-prev {
       text-align: center;
   }
 }
+@media (max-width:640px) {
+  p.obj-info {
+      font-size: 1.1rem !important;
+      text-align: center;
+  }
+}
 @media (max-width: 991px){
   .container {
       max-width: 90vw !important;
@@ -450,7 +456,7 @@ button.slick-prev {
   }
 }
 p.obj-info {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 p.obj-info span.border-r {
     border-right: 1px solid #dadada;
