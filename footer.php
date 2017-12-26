@@ -41,18 +41,26 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <script>
 $.fn.equalHeights = function(){
-var max_height = 0;
-$(this).each(function(){
-	max_height = Math.max($(this).height(), max_height);
-});
-$(this).each(function(){
-	$(this).height(max_height);
-});
+	var max_height = 0;
+	$(this).each(function(){
+		max_height = Math.max($(this).height(), max_height);
+	});
+	$(this).each(function(){
+		$(this).height(max_height);
+	});
 };
-
-$(document).ready(function(){
-	$('.equalheight .card').equalHeights();
+$( window ).resize(function() {
+  $('.equalheight .card').equalHeights();
+	$('.equalheight .stepblock').equalHeights();
+	qualheight
 });
+$(document).ready(function(){
+	$('p:empty').remove();
+	$('.equalheight .card').equalHeights();
+	$('.equalheight .stepblock').equalHeights();
+});
+
+
 </script>
 </body>
 

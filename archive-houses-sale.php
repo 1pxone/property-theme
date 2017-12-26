@@ -20,7 +20,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 	<?php get_template_part( 'filter-templates/houses-filters' ); ?>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-12 px-0 <?php if (isset($_GET['map']) && $_GET['map'] == TRUE ){echo "";} else {echo "hidden";} ?>" id="onmap">
+			<div class="col-12 px-0 <?php if (isset($_GET['map']) && $_GET['map'] == "true" ){echo "";} else {echo "hidden";} ?>" id="onmap">
 				<div id="map"></div>
 			</div>
 		</div>
@@ -28,14 +28,14 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 				<main class="site-main " id="main">
 					<div id="filterresult" class="row " >
-						<div class="col-12 <?php if (isset($_GET['map']) && $_GET['map'] == TRUE ){echo "hidden";} else {echo "s";} ?> mt-3" id="listed">
+						<div class="col-12 <?php if (isset($_GET['map']) && $_GET['map'] == "true" ){echo "hidden";} else {echo "s";} ?> mt-3" id="listed">
 							<div class="row px-2">
 							<?php if ( have_posts() ) : ?>
 								<?php while ( have_posts() ) : the_post(); ?>
-									<?php get_template_part( 'loop-templates/houses', get_post_format() );?>
+									<?php get_template_part( 'loop-templates/houses-sale', get_post_format() );?>
 								<?php endwhile; ?>
 							<?php else : ?>
-								<?php get_template_part( 'loop-templates/houses', 'none' ); ?>
+								<?php get_template_part( 'loop-templates/houses-none', 'none' ); ?>
 							<?php endif; ?>
 						</div>
 					</div>

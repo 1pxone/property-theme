@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="col-12 col-md-3 wborder">
-        <div class="btn-group mr-3 circled w-100 wborder">
+        <div class="btn-group mr-md-3 circled w-100 wborder">
             <a href="javascript:void(0)" class="btn circled btn-active btn-c-primary w-100">Продажа</a>
             <a href="/rent/areas" class="btn btn-inactive circled w-100">Аренда</a>
         </div>

@@ -10,34 +10,39 @@ Template Name: Главная
 
 <div class="container-fluid" id="points">
   <div class="container text-center text-white pt-md-5">
-    <div class="row pt-md-5 mt-md-5">
-      <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
+    <div class="row ">
+      <p class="main-phrase">
+        ЗАГОРОДНАЯ НЕДВИЖИМОСТЬ <br>СТРОГО БЕЗ РИЕЛТОРОВ
+      </p>
+    </div>
+    <div class="row mt-md-5 d-none d-md-flex">
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 d-flex d-sm-block">
           <i class="pointicon flaticon-house-1"></i>
-        <h5 class="mt-2">Первый сайт загородной недвижимости строго без риелторов.</h5>
+        <h5 class="mt-2">Размещайте объявление совершенно бесплатно</h5>
       </div>
-      <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 d-flex d-sm-block">
           <i class="pointicon flaticon-wallet"></i>
-        <h5 class="mt-2">Комиссия риелтору остается в вашем кармане.</h5>
+        <h5 class="mt-2">Только проверенные контакты владельцев недвижимости</h5>
       </div>
-      <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 d-flex d-sm-block">
           <i class="pointicon flaticon-house"></i>
-        <h5 class="mt-2">Вы общаетесь с собственником напрямую без посредников.</h5>
+        <h5 class="mt-2">Работаем без посредников</h5>
       </div>
     </div>
-    <div class="row mt-md-5">
+    <div class="row mt-md-5 d-none d-md-flex">
         <div class="col-6 col-sm-6 col-lg-2 col-xl-2 d-none d-lg-block">
       </div>
-      <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 d-flex d-sm-block">
           <i class="pointicon flaticon-house-4"></i>
-        <h5 class="mt-2">Мы регулярно обновляем базу самостоятельно.</h5>
+        <h5 class="mt-2">Надежная защита от навязчивых риэлторов с помощью спам-фильтра</h5>
       </div>
-      <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 d-flex d-sm-block">
           <i class="pointicon flaticon-piggy-bank"></i>
-        <h5>Размещение объявления бесплатно.</h5>
+        <h5>Поможем оформить сделку в кратчайшие сроки</h5>
       </div>
     </div>
     <div class="row py-5">
-      <div class="mt-5 d-none d-md-block" id="querybar">
+      <div class="d-none d-md-block" id="querybar">
         <div id="querywrapper">
           <div class="input-group ">
               <select  class="form-control form-control-lg mr-2"  name="for" id="_whatfor">
@@ -95,8 +100,8 @@ Template Name: Главная
         </div>
         <div class="row">
           <div class="col-6 text-left text-white" id="populars">
-            <a href="#">Дома до 5 млн.</a><br />
-            <a href="#">Участки по Новой риге</a>
+            <!-- <a href="#">Дома до 5 млн.</a><br />
+            <a href="#">Участки по Новой риге</a> -->
           </div>
           <div class="col-6">
             <div class="d-inline float-right">
@@ -194,7 +199,7 @@ Template Name: Главная
     <?php if( have_posts() ){ while( have_posts() ){ the_post(); ?>
       <div <?php post_class(); ?> id="post-<?php the_ID(); ?>"><?php the_content(); ?></div>
       <?php } /* конец while */ ?>
-    <?php  }  else echo "<h2>Записей нет.</h2>";?>
+    <?php  }  else echo "";?>
   </div>
 </div>
 <div class="container-fluid bg-e8 py-5" id="main-page">

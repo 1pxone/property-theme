@@ -352,9 +352,21 @@ div#wrapper-footer {
     padding: 15px;
     margin-top: 15px;
 }
-.btn {
-    font-weight: 300 !important;
+select#_whatfor {
+    border-radius: .25rem!important;
+    border: none;
 }
+select#_type {
+    border-radius: .25rem!important;
+    border: none;
+}
+select#_road {
+    border: none;
+    border-radius: .25rem!important;
+}
+/* .btn {
+    font-weight: 300 !important;
+} */
 .lotGallery {
     height: 350px;
     border-radius: .25rem .25rem 0 0;
@@ -476,7 +488,7 @@ div#querybar {
     margin: 0 auto;
 }
 div#querybar #querywrapper {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.35);
     padding: 10px;
     border-radius: 0.25rem;
     margin-bottom: 8px !important;
@@ -510,7 +522,7 @@ div#filter-block {
     background-color: rgba(255, 255, 255, 0.25);
     /* border-color: #007bff; */
     border: 0;
-    font-weight: 200 !important;
+    /* font-weight: 200 !important; */
     transition: 0.5s;
 }
 
@@ -526,8 +538,67 @@ input#_priceFrom {
     border-right: 1px solid #dedede !important;
 }
 .main-image {
-    transition: 0.5s;
+  transition: 0.5s;
+  min-height: 200px;
+  background-size: cover;
+  background-position: 50% 50%;
 }
+
+span.bignum {
+    position: absolute;
+    font-size: 9em;
+    color: rgba(232, 232, 232, 0.42);
+    font-weight: 700;
+    bottom: -10px;
+      left: 40%;
+    z-index: 0;
+}
+#stepsTo p {
+    z-index: 99;
+    position: relative;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 20px;
+    font-weight: 300;
+}
+p.main-phrase {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.stepblock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width:767px){
+  span.bignum {
+      font-size: 6em;
+     left: 0;
+  }
+  p.main-phrase {
+      margin-top: 40px;
+      font-size: 2em;
+
+  }
+  div#points {
+      min-height: 50vh;
+  }
+  #stepsTo p {
+      padding: 0px;
+  }
+  .main-image {
+    transition: 0.5s;
+    min-height: 150px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+}
+
+
+
 .main-image:hover {
     filter: opacity(0.95);
 }
@@ -602,9 +673,17 @@ button#toggleFilters {
 div#wrapper-navbar img {
     width: 130px;
 }
+
+
 div#wrapper-navbar nav {
     justify-content: space-between;
 }
+@media(min-width:767px){
+  div#wrapper-navbar nav {
+      justify-content: space-around;
+  }
+}
+
 .navbar-collapse {
     flex-basis: auto !important;
     align-items: center;
@@ -1407,7 +1486,7 @@ p.price.price-obj {
 }
 
 div#querybar_mobile #querywrapper_mobile {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.35);
     padding: 10px;
     border-radius: 0.25rem;
     margin-bottom: 8px !important;

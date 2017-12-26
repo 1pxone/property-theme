@@ -7,10 +7,10 @@
 
 ?>
 
-<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 equalheight px-2 mb-2" data-lat="<?php the_field( 'широта' ); ?>" data-lon="<?php the_field( 'долгота' ); ?>" data-addr="<?php the_field('адрес'); ?>" data-link="<?php the_permalink(); ?>" data-price="<?php echo number_format(get_field('price'), 0, ',', ' ')  ?>" data-img="<?php echo the_post_thumbnail_url(); ?>">
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 equalheight px-2 mb-3" data-lat="<?php the_field( 'широта' ); ?>" data-lon="<?php the_field( 'долгота' ); ?>" data-addr="<?php the_field('адрес'); ?>" data-link="<?php the_permalink(); ?>" data-price="<?php echo number_format(get_field('price'), 0, ',', ' ')  ?>" data-img="<?php echo the_post_thumbnail_url(); ?>">
   <article <?php post_class("card item"); ?> id="post-<?php the_ID(); ?>" date="<?php the_date(); ?>">
     <a href="<?php the_permalink(); ?>" target="_blank">
-        <img src="<?php echo the_post_thumbnail_url(); ?>" class="rounded-top" />
+        <div style="background-image:url(<?php echo the_post_thumbnail_url(); ?>);" class="main-image"></div>
     </a>
     <div class="card-body productInfo py-2 px-3">
 
