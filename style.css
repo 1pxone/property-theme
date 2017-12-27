@@ -566,8 +566,16 @@ p.main-phrase {
     margin: 0 auto;
     font-size: 3em;
     font-weight: 500;
+    font-family: 'Playfair Display', serif;
 }
 
+.baloon-image {
+    min-height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    border-radius: .25rem .25rem 0 0;
+}
 .stepblock {
     display: flex;
     justify-content: center;
