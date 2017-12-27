@@ -338,12 +338,12 @@ div#overlay {
     left: 0;
 }
 */
-div#wrapper-footer {
+/* div#wrapper-footer {
     background: black;
     color: white;
     font-weight: 100;
         min-height: 200px;
-}
+} */
 .bg-e8{
   background-color: #e8e8e8;
 }
@@ -407,7 +407,7 @@ div#points h5 {
     padding-right: 40px;
 }
 div#wrapper-footer-full {
-    background: #444444;
+    background: #2b2b2b;
     color: white;
 }
 
