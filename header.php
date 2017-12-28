@@ -48,19 +48,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<i class="ion-navicon h3"></i>
 				</button>
 
-				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse d-none d-md-block',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'walker'          => new WP_Bootstrap_Navwalker(),
-					)
-				); ?>
-
 				<!-- Your site title as branding in the menu -->
 				<?php if ( ! has_custom_logo() ) { ?>
 
@@ -75,6 +62,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php endif; ?>
 
 				<?php } else { the_custom_logo(); } ?><!-- end custom logo -->
+				<!-- The WordPress Menu goes here -->
+				<?php wp_nav_menu(
+					array(
+						'theme_location'  => 'primary',
+						'container_class' => 'collapse navbar-collapse d-none d-md-block',
+						'container_id'    => 'navbarNavDropdown',
+						'menu_class'      => 'navbar-nav',
+						'fallback_cb'     => '',
+						'menu_id'         => 'main-menu',
+						'walker'          => new WP_Bootstrap_Navwalker(),
+					)
+				); ?>
+
+
 
 				<?php wp_nav_menu(
 					array(
@@ -87,6 +88,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 						'walker'          => new WP_Bootstrap_Navwalker(),
 					)
 				); ?>
+
+
+
 
 					<ul class="navbar-nav my-2 my-lg-0" id="createBtn">
 						<li class="nav-item active mr-2">
