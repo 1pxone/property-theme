@@ -203,7 +203,7 @@
   <div class="container" id="main-page">
   <div class="row pt-3 pb-3 p-3">
     <?php $loop = new WP_Query(array( 'post_type' => array('houses-sale'),'showposts' => '3')); if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
-        <?php get_template_part( 'loop-templates/houses', get_post_format() ); ?>
+        <?php get_template_part( 'loop-templates/houses-sale', get_post_format() ); ?>
         <?php endwhile; ?>
         <?php endif; wp_reset_postdata(); ?>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 equalheight px-2 mb-3">
