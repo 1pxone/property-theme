@@ -22,7 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-md-12">
 
 				<footer class="site-footer" id="colophon">
-
+					
 
 
 				</footer><!-- #colophon -->
@@ -178,6 +178,8 @@ $(document).ready(function(){
 	$('.equalheight .card').equalHeights();
 	$('.equalheight .stepblock').equalHeights();
 });
+
+
 </script>
 </body>
 

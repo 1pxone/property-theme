@@ -36,6 +36,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
 	  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.query.js"></script>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

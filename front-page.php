@@ -188,7 +188,7 @@
                 <i class="pointicon flaticon-house-1" id="findyours"></i><br/>
                 <h5 class="card-title fw-slim">Найдите свой дом</h5>
                 <p class="card-text">используя гибкие фильтры</p>
-                <a href="/rent/houses" class="btn circled btn-active btn-c-primary">Все предложения</a>
+                <a href="/sale/houses" class="btn circled btn-active btn-c-primary">Все предложения</a>
               </div>
             </div>
         </div>

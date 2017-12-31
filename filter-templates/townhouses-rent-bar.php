@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-12 col-md-5">
         <button class="btn btn-c-primary circled" id="toggleFilters">Фильтры <i class="ion-ios-settings-strong"></i></button>
-        <button class="btn btn-map" type="button" id="maplist"><?php if (isset($_GET['map']) && $_GET['map'] == TRUE ){echo "Показать cписком <i class='ion-grid h6'></i>";} else {echo "Показать на карте  <i class='ion-map h6'></i>";} ?></button>
+        <button class="btn btn-map" type="button" id="maplist"><?php if (isset($_GET['map']) && $_GET['map'] ==  "true" ){echo "Показать cписком <i class='ion-grid h6'></i>";} else {echo "Показать на карте  <i class='ion-map h6'></i>";} ?></button>
           <!-- <button class="btn btn-sm btn-def-border btn-untoggled circled fw-light" id="cheapFirst">Сначала дешевые <i class="fa fa-sort-amount-asc" aria-hidden="true"></i></button>
           <button class="btn btn-sm btn-def-border btn-untoggled circled fw-light" id="expensiveFirst">Сначала дорогие <i class="fa fa-sort-amount-desc" aria-hidden="true"></i></button> -->
           <!-- <button class="btn btn-sm btn-def-border btn-toggled circled fw-light " id="byDate">По дате <i class="fa fa-calendar" aria-hidden="true"></i></button> -->

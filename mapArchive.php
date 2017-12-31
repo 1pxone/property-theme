@@ -107,7 +107,6 @@
 			 );
 			 var currentpath = window.location.pathname;
 			 var pricetype;
-			 console.log(currentpath);
 			 if (currentpath == "/sale/houses/" || currentpath == "/sale/townhouses/" || currentpath == "/sale/areas/"){
 					pricetype = "руб."
 			 } else {
@@ -155,37 +154,20 @@
 			}
 		};
 		$('#maplist').click(function(){
-			$('#onmap').toggleClass('hidden');
-			$('#listed').toggleClass('hidden');
-			var query = location.search;
-			if($('#onmap').hasClass('hidden')){
-        // Для уничтожения используется метод destroy.
-        myMap.destroy();
-        // location.search = location.search + "map=false";
-				$('#maplist').html("Показать на карте <i class='ion-map h6'></i>");
-			} else {
-				initMap();
-        // location.search = location.search + "map=true";
-				$('#maplist').html("Показать cписком <i class='ion-grid h6'></i>")
-			}
+			var mapstatus = $.query.get("map");
+			 if(mapstatus === "true" || mapstatus === undefined){
+				 myMap.destroy();
+ 				$('#maplist').html("Показать на карте <i class='ion-map h6'></i>");
+				 location.search = $.query.set("map", "false");
+			 } else {
+				 initMap();
+ 				$('#maplist').html("Показать cписком <i class='ion-grid h6'></i>")
+				 location.search = $.query.set("map", "true");
+			 }
 		});
 
-	var queries = {};
-	if(document.location.search.length > 0){
-		$.each(document.location.search.substr(1).split('&'),function(c,q){
-		  var i = q.split('=');
-		  queries[i[0].toString()] = i[1].toString();
-		});
-	};
-
-	for (var key in queries) {
-		if(key === "road"){
-			$('select[name="road"]').val(queries["road"]);
-		};
-		$('input[name='+ key +']').val(queries[key]).change();
-	};
 	$(document).ready(function() {
-    if(queries.map){
+    if($.query.get("map") === "true"){
       initMap();
     };
 		$("#filter-block").find("form").attr("action", location.pathname);

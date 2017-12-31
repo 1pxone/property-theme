@@ -661,6 +661,10 @@ button#toggleFilters {
 div#wrapper-navbar img {
     width: 130px;
 }
+div#page-wrapper {
+    background: white;
+}
+
 
 
 div#wrapper-navbar nav {
