@@ -2,7 +2,7 @@
 
 <?php get_header(); ?>
 
-<img id="bgsrc" class="d-none" src="../img/frontbg.png" />
+<img id="bgsrc" class="d-none" src="/wp-content/themes/property-theme/img/frontbg.png" />
 <div class="container-fluid" id="points" style="background-image: url(<?php get_template_part( 'preloader64' ); ?>);">
   <div class="container text-center text-white pt-md-5" id="points-content">
     <div class="row ">

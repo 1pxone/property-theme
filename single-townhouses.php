@@ -328,7 +328,7 @@ Template Post Type: houses
             .add('typeSelector');
           myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
               iconLayout: 'default#image',
-              iconImageHref: '/img/point.png',
+              iconImageHref: '/wp-content/themes/property-theme/img/point.png',
               iconImageSize: [25, 48],
              iconImageOffset: [-11, -28]
           }), myMap.geoObjects.add(myPlacemark)})

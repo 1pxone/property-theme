@@ -139,7 +139,7 @@
 	        }, {
 						iconLayout: 'default#image',
 						// Своё изображение иконки метки.
-						iconImageHref: '/img/point.png',
+						iconImageHref: '/wp-content/themes/property-theme/img/point.png',
 						// Размеры метки.
 						iconImageSize: [25, 48],
 						// Смещение левого верхнего угла иконки относительно
