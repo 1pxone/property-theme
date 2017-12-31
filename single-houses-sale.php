@@ -107,7 +107,7 @@ Template Post Type: houses
       </script>
   <div class="container">
     <div class="row">
-      <div class="col-12 mainblock px-2" data-lat="<?php the_field( 'широта' ); ?>" data-lon="<?php the_field( 'долгота' ); ?>" data-addr="<?php the_field('адрес'); ?>" data-link="<?php the_permalink(); ?>" data-price="<?php echo number_format(get_field('price'), 0, ',', ' ')  ?>" data-img="<?php echo the_post_thumbnail_url(); ?>">
+      <div class="col-12 mainblock px-2" data-lat="<?php the_field( 'широта' ); ?>" data-lon="<?php the_field( 'долгота' ); ?>" >
         <div class="card item obj mb-3">
 
           <div class="row card-body">
@@ -305,165 +305,37 @@ Template Post Type: houses
             </div>
     </div>
   </div>
-
-             <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
              <script>
-             	var myMap;
-             	String.prototype.trimRight=function(){
-             		  var r=/\s+$/g;
-             		  return this.replace(r,'');
-             		};
              	function initMap(){
-
-             		 var cords = [];
-             		 $.each($('.mainblock'),function(){
-             				var obj = {
-             					cords:[],
-             					name:"",
-             					link:"",
-             					img:"",
-             					description:"",
-             					price:"",
-             				};
-             				var that = $(this);
-             				obj.cords.push(that.attr('data-lon'),that.attr('data-lat'));
-             				obj.name = that.attr('data-addr');
-             				obj.link = that.attr('data-link');
-             				obj.img = that.attr('data-img');
-             				obj.price = that.attr('data-price');
-             				cords.push(obj);
-             			}
-             		 );
-
-             		ymaps.ready(init);
-             		function init() {
-             			MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
-             					'<div class="card card-baloon" style="min-width:235px">'+
-                            '<a class="close" href="#"><i class="ion-close-round"></i></a>' +
-             							 '<div class="arrow"></div>' +
-
-             							 '$[[options.contentLayout observeSize minWidth=235 maxWidth=235 maxHeight=350]]', {
-
-             							 build: function () {
-             									 this.constructor.superclass.build.call(this);
-
-             									 this._$element = $('.card', this.getParentElement());
-
-             									 this.applyElementOffset();
-
-             									 this._$element.find('.close')
-             											 .on('click', $.proxy(this.onCloseClick, this));
-             							 },
-
-             							 clear: function () {
-             									 this._$element.find('.close')
-             											 .off('click');
-
-             									 this.constructor.superclass.clear.call(this);
-             							 },
-
-             							 onSublayoutSizeChange: function () {
-             									 MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
-
-             									 if(!this._isElement(this._$element)) {
-             											 return;
-             									 }
-
-             									 this.applyElementOffset();
-
-             									 this.events.fire('shapechange');
-             							 },
-
-             							 applyElementOffset: function () {
-             									 this._$element.css({
-             											 left: -(this._$element[0].offsetWidth / 2),
-             											 top: -(this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight)
-             									 });
-             							 },
-
-             							 onCloseClick: function (e) {
-             									 e.preventDefault();
-
-             									 this.events.fire('userclose');
-             							 },
-
-             							 getShape: function () {
-             									 if(!this._isElement(this._$element)) {
-             											 return MyBalloonLayout.superclass.getShape.call(this);
-             									 }
-
-             									 var position = this._$element.position();
-
-             									 return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
-             											 [position.left, position.top], [
-             													 position.left + this._$element[0].offsetWidth,
-             													 position.top + this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight
-             											 ]
-             									 ]));
-             							 },
-
-             							 _isElement: function (element) {
-             									 return element && element[0] && element.find('.arrow')[0];
-             							 }
-             					 });
-             			MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
-             							 '$[properties.balloonContent]'
-             			 );
-                  var mapcenter;
-                  for(var i = 0; i<cords.length; i++){
-                    mapcenter = cords[i].cords;
-
-                  };
-             			myMap = new ymaps.Map("map", {
-             							center: mapcenter,
-             							zoom: 15,
-             							controls: [],
-             					});
-             					myMap.controls
-             			    .add('zoomControl')
-             			    .add('typeSelector');
-             					for(var i = 0; i<cords.length; i++){
-                        center = cords[i].cords;
-             						var price = cords[i].price;
-             					myMap.geoObjects
-             					.add(new ymaps.Placemark(
-             							cords[i].cords, {
-             	            balloonContent: [
-             								 	'<img class="img-fluid"  src=' + cords[i].img + ' />',
-             		 						  '<div class="card-body p-1">',
-             										'<p class="price mb-2">' + cords[i].price,
-             										'<span> руб./в мес.</span> </p>',
-             										 '<p class="card-text mb-1"><small>' + cords[i].name + '</small></p>',
-             										 '<div class="text-center">',
-             										 '<a class="btn circled btn-sm btn-c-primary btn-block" href=' + cords[i].link + '>Подробнее</a></div>',
-             		 						  '</div>'
-             							 ].join('')
-             	        }, {
-             						iconLayout: 'default#image',
-             						// Своё изображение иконки метки.
-             						iconImageHref: 'https://png.icons8.com/?id=46471&size=280',
-             						// Размеры метки.
-             						iconImageSize: [42, 42],
-             						// Смещение левого верхнего угла иконки относительно
-             						// её "ножки" (точки привязки).
-             						iconImageOffset: [-5, -38],
-             	            balloonShadow: true,
-             	            balloonLayout: MyBalloonLayout,
-             	            balloonContentLayout: MyBalloonContentLayout,
-             	            balloonPanelMaxMapArea: 0
-             						}
-             					)
-             				)};
-             			}
+                var cords = [];
+                $.each($('.mainblock'),function(){
+                   var that = $(this);
+                   cords.push(that.attr('data-lon'),that.attr('data-lat'));
+                 }
+                );
+                ymaps.ready(function () {
+                 var myMap = new ymaps.Map('map', {
+                         center: cords,
+                         zoom: 15,
+                         controls: [],
+                       });
+                       myMap.controls
+                       .add('zoomControl')
+                       .add('typeSelector');
+                     myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
+                         iconLayout: 'default#image',
+                         iconImageHref: '/img/point.png',
+                         iconImageSize: [25, 48],
+             						iconImageOffset: [-11, -28]
+                     }), myMap.geoObjects.add(myPlacemark)})
              		};
 
-             	$(document).ready(function() {
-             	  $(function() {
-             	    $(document).trigger("enhance");
-                  initMap();
-             	  });
-             	});
+               	$(document).ready(function() {
+               	  $(function() {
 
+                    initMap();
+               	  });
+               	});
               </script>
               <style>
              		 html, .map, #map {
@@ -475,10 +347,7 @@ Template Post Type: houses
              				position: absolute;
              		}
               </style>
-              <!--
-             <div class="map hidden" id="mapWrapper">
-               <div id="map"></div>
-             </div> -->
+
    </div>
             <?php get_footer(); ?>
                 <!-- Ваш файл footer.php -->

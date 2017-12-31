@@ -2,39 +2,15 @@
 
 <?php get_header(); ?>
 
-<div class="container-fluid" id="points">
-  <div class="container text-center text-white pt-md-5">
+<img id="bgsrc" class="d-none" src="../img/frontbg.png" />
+<div class="container-fluid" id="points" style="background-image: url(<?php get_template_part( 'preloader64' ); ?>);">
+  <div class="container text-center text-white pt-md-5" id="points-content">
     <div class="row ">
       <p class="main-phrase">
         ЗАГОРОДНАЯ НЕДВИЖИМОСТЬ <br>БЕЗ ПОСРЕДНИКОВ
       </p>
     </div>
-    <div class="row mt-md-5 d-none d-md-flex">
-      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 d-flex d-sm-block">
-          <i class="pointicon flaticon-house-1"></i>
-        <h5 class="mt-2">Размещайте объявление совершенно бесплатно</h5>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 d-flex d-sm-block">
-          <i class="pointicon flaticon-wallet"></i>
-        <h5 class="mt-2">Только проверенные контакты владельцев недвижимости</h5>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 d-flex d-sm-block">
-          <i class="pointicon flaticon-house"></i>
-        <h5 class="mt-2">Работаем без посредников</h5>
-      </div>
-    </div>
-    <div class="row mt-md-5 d-none d-md-flex">
-        <div class="col-6 col-sm-6 col-lg-2 col-xl-2 d-none d-lg-block">
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 d-flex d-sm-block">
-          <i class="pointicon flaticon-house-4"></i>
-        <h5 class="mt-2">Надежная защита от навязчивых риэлторов с помощью спам-фильтра</h5>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 d-flex d-sm-block">
-          <i class="pointicon flaticon-piggy-bank"></i>
-        <h5>Поможем оформить сделку в кратчайшие сроки</h5>
-      </div>
-    </div>
+
     <div class="row py-5">
       <div class="d-none d-md-block" id="querybar">
         <div id="querywrapper">
@@ -60,35 +36,35 @@
               </select>
             <input type="text" class="form-control form-control-lg rounded-left" aria-label="Text input with dropdown button" placeholder="от, руб." id="_priceFrom">
             <input type="text" class="form-control form-control-lg mr-2 rounded-right" aria-label="Text input with dropdown button" placeholder="до, руб." id="_priceTo">
-              <select  class="form-control form-control-lg"  name="road" id="_road">
-                  <option value="" disabled selected>Шоссе</option>
-                  <?php $roads= array(
-                         "Алтуфьевское",
-                         "Боровское шоссе",
-                          "Варшавское",
-                          "Волоколамское",
-                          "Дмитровское",
-                          "Ильинское",
-                          "Калужское",
-                          "Каширское",
-                          "Киевское",
-                          "Куркинское",
-                          "Ленинградское",
-                          "Минское",
-                          "Можайское",
-                          "Новорижское",
-                          "Новорязанское",
-                          "Осташковское",
-                          "Пятницкое",
-                          "Рублево-Успенское",
-                          "Симферопольское",
-                          "Сколковское",
-                          "Ярославское"
-                      );
-                  foreach($roads as $key): ?>
-                      <option value="<?php echo $key; ?>"><?php echo $key; ?></option>
-                  <?php endforeach; ?>
-              </select>
+            <select  class="form-control form-control-lg"  name="road" id="_road">
+                <option value="" disabled selected>Шоссе</option>
+                <?php $roads= array(
+                       "Алтуфьевское",
+                       "Боровское шоссе",
+                        "Варшавское",
+                        "Волоколамское",
+                        "Дмитровское",
+                        "Ильинское",
+                        "Калужское",
+                        "Каширское",
+                        "Киевское",
+                        "Куркинское",
+                        "Ленинградское",
+                        "Минское",
+                        "Можайское",
+                        "Новорижское",
+                        "Новорязанское",
+                        "Осташковское",
+                        "Пятницкое",
+                        "Рублево-Успенское",
+                        "Симферопольское",
+                        "Сколковское",
+                        "Ярославское"
+                    );
+                foreach($roads as $key): ?>
+                    <option value="<?php echo $key; ?>"><?php echo $key; ?></option>
+                <?php endforeach; ?>
+            </select>
             <br />
           </div>
         </div>

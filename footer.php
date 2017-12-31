@@ -140,6 +140,25 @@ $.fn.equalHeights = function(){
 	});
 };
 
+function getAllImagesDonePromise() {
+    var d = $.Deferred();
+    var imgs = $("img");
+    imgs.one("load.allimages error.allimages", function() {
+        imgs = imgs.not(this);
+        if (imgs.length == 0) {
+            d.resolve();
+        }
+    });
+    var complete = imgs.filter(function() { return this.complete; });
+    complete.off(".allimages");
+    imgs = imgs.not(complete);
+    complete = undefined;
+    if (imgs.length == 0) {
+        d.resolve();
+    }
+    return d.promise();
+};
+
 $( window ).resize(function() {
   $('.equalheight .card').equalHeights();
 	$('.equalheight .stepblock').equalHeights();
@@ -151,6 +170,10 @@ $( window ).resize(function() {
 });
 
 $(document).ready(function(){
+	getAllImagesDonePromise().then(function() {
+		var url = $("#bgsrc").attr("src");
+		setTimeout(  $("#points").css('background-image', 'url('+ url +')'), 1000);
+	});
 	$('p:empty').remove();
 	$('.equalheight .card').equalHeights();
 	$('.equalheight .stepblock').equalHeights();

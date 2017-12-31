@@ -19,7 +19,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link href="<?php echo get_template_directory_uri(); ?>/style.css?v=0.2" rel="stylesheet">
+	<link href="<?php echo get_template_directory_uri(); ?>/style.css?v=0.3" rel="stylesheet">
 	<link href="<?php echo get_template_directory_uri(); ?>/animate.css" rel="stylesheet">
 	<link href="<?php echo get_template_directory_uri(); ?>/css/normalize.css" rel="stylesheet">
   <link href="<?php echo get_template_directory_uri(); ?>/css/flaticon.css" rel="stylesheet">
@@ -94,10 +94,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<ul class="navbar-nav my-2 my-lg-0" id="createBtn">
 						<li class="nav-item active mr-2">
-			        <a class="nav-link btn circled btn-secondary-outline fw-100 pb-0 px-0 " href="/create"><i class="ion-ios-telephone h4"></i></a>
+			        <a class="nav-link btn circled btn-secondary-outline fw-100 pb-0 px-0 " tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"><i class="ion-ios-telephone h4"></i></a>
 			      </li>
 			      <li class="nav-item active">
-			        <a class="nav-link btn btn-sm circled btn-c-primary fw-100 px-3" href="/create">Разместить объявление <i class="ion-plus h6"></i></a>
+			        <a class="nav-link btn circled btn-c-primary fw-100 px-3" href="/create">Разместить объявление <i class="ion-plus h6"></i></a>
 			      </li>
 	    		</ul>
 

@@ -105,7 +105,14 @@
 			MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
 							 '$[properties.balloonContent]'
 			 );
-
+			 var currentpath = window.location.pathname;
+			 var pricetype;
+			 console.log(currentpath);
+			 if (currentpath == "/sale/houses/" || currentpath == "/sale/townhouses/" || currentpath == "/sale/areas/"){
+					pricetype = "руб."
+			 } else {
+				 pricetype = "руб./в мес."
+			 };
 			myMap = new ymaps.Map("map", {
 							center: [55.76, 37.64],
 							zoom: 10,
@@ -120,10 +127,10 @@
 					.add(new ymaps.Placemark(
 							cords[i].cords, {
 	            balloonContent: [
-								 	'<img class="img-fluid"  src=' + cords[i].img + ' />',
+								 	'<div style="background-image:url(' + cords[i].img + ');" class="main-image"></div>',
 		 						  '<div class="card-body p-1">',
 										'<p class="price mb-2">' + cords[i].price,
-										'<span> руб./в мес.</span> </p>',
+										'<span> '+ pricetype +'</span> </p>',
 										 '<p class="card-text mb-1"><small>' + cords[i].name + '</small></p>',
 										 '<div class="text-center">',
 										 '<a class="btn circled btn-sm btn-c-primary btn-block" href=' + cords[i].link + '>Подробнее</a></div>',
@@ -132,12 +139,12 @@
 	        }, {
 						iconLayout: 'default#image',
 						// Своё изображение иконки метки.
-						iconImageHref: 'https://png.icons8.com/?id=46471&size=280',
+						iconImageHref: '/img/point.png',
 						// Размеры метки.
-						iconImageSize: [42, 42],
+						iconImageSize: [25, 48],
 						// Смещение левого верхнего угла иконки относительно
 						// её "ножки" (точки привязки).
-						iconImageOffset: [-5, -38],
+						iconImageOffset: [-11, -28],
 	            balloonShadow: true,
 	            balloonLayout: MyBalloonLayout,
 	            balloonContentLayout: MyBalloonContentLayout,
