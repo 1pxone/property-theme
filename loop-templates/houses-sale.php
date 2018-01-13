@@ -21,12 +21,12 @@
             <?php else: ?>
             <?php endif ?>
           </span></p>
-        <p class="lotinfo mb-2"><span><?php the_field( 'сотки' ); ?> сот.</span> • <span><?php the_field( 'площадь' ); ?> м²</span> • <span><?php the_field( 'км_от_мкад' ); ?> км. от МКАД</span></p>
+        <p class="lotinfo mb-0"><span><?php the_field( 'сотки' ); ?> сот.</span> • <span><?php the_field( 'площадь' ); ?> м²</span> • <span><?php the_field( 'км_от_мкад' ); ?> км. от МКАД</span></p>
+        <p><span class="dateAdded"><?php echo get_the_date(); ?></span></p>
         <h4 class="card-title mb-0 h5"><small><?php the_title(); ?></small></h4>
 
-      <div class="d-flex justify-content-between card-bottom">
-        <span class="dateAdded"><?php print_r(the_date()); ?></span>
-      </div>
+
+
     </div>
     <ul class="list-group list-group-flush">
        <li class="list-group-item"> <span class="address"><small><?php the_field('адрес'); ?></small></span></li>

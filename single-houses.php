@@ -153,7 +153,7 @@ Template Post Type: houses
                       <small>Торг уместен</small>
                     </p>
                   <?php } ?>
-              <?php if( isset($_GET["secret"]) && $_GET["secret"] == get_field( 'secret' )) : ?>
+              <?php $theid = get_the_ID(); if( isset($_GET["secret"]) && $_GET["secret"] || isset($_COOKIE["secret".$theid.]) && $_COOKIE["secret".$theid.] == get_field( 'secret' )) : ?>
                 <a href="tel:<?php the_field( 'phone' ); ?>" class="btn btn-c-primary circled btn-block">
                   <?php
                     $str = strval(get_field( 'phone' ));
@@ -162,7 +162,8 @@ Template Post Type: houses
                   ?>
                 </a>
               <?php else : ?>
-                <button class="btn btn-c-primary circled btn-block" data-toggle="modal" data-target="#getPhone"><i class="icon ion-android-call"></i> Телефон владельца</button>
+                <!-- <button class="btn btn-c-primary circled btn-block" data-toggle="modal" data-target="#getPhone" ><i class="icon ion-android-call"></i> Телефон владельца</button> -->
+                <a href="<?php the_field( 'buy_link' ); ?>" target="_blank" class="btn btn-c-primary circled btn-block"><i class="icon ion-android-call"></i> Телефон владельца</a>
               <?php endif ?>
               <div class="row">
                 <?php if ( get_field( 'call_from') && get_field( 'call_to')  ) { ?>
@@ -178,6 +179,7 @@ Template Post Type: houses
             <div class="col-md-12 col-lg-8">
 
               <h2><?php the_title(); ?></h2>
+              <div class="ya-share2" data-services="vkontakte,twitter,facebook,gplus" data-counter></div>
               <div class="row my-3">
                 <div class="col-12 col-sm-6">
                   <h5>Удобства</h5>

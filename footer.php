@@ -22,7 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-md-12">
 
 				<footer class="site-footer" id="colophon">
-					
+
 
 
 				</footer><!-- #colophon -->
@@ -38,7 +38,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div><!-- #page we need this extra closing tag here -->
 
 <?php wp_footer(); ?>
-
 <script>
 var paramsToggled = false;
 $("#moreParamsBtn").click(function() {
@@ -160,8 +159,14 @@ function getAllImagesDonePromise() {
 };
 
 $( window ).resize(function() {
-  $('.equalheight .card').equalHeights();
-	$('.equalheight .stepblock').equalHeights();
+	if ($(window).width() > 575) {
+		$('.equalheight .card').equalHeights();
+		$('.equalheight .stepblock').equalHeights();
+	} else {
+		$('.equalheight .card').attr("width", "")
+		$('.equalheight .stepblock').attr("width", "")
+	}
+
 	$('#navbarNavDropdownMobile').attr('style', 'display: none !important');
 	if($("#toggleMenu i").hasClass("ion-android-close")){
 		$("#toggleMenu i").toggleClass("ion-navicon")
@@ -170,6 +175,22 @@ $( window ).resize(function() {
 });
 
 $(document).ready(function(){
+	$(function(){
+    $("[data-toggle=popover]").popover({
+        html : true,
+        content: function() {
+          var content = $(this).attr("data-popover-content");
+          return $(content).children(".popover-body").html();
+        },
+        title: function() {
+          var title = $(this).attr("data-popover-content");
+          return $(title).children(".popover-heading").html();
+        }
+    });
+});
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
 	getAllImagesDonePromise().then(function() {
 		var url = $("#bgsrc").attr("src");
 		setTimeout(  $("#points").css('background-image', 'url('+ url +')'), 1000);

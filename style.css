@@ -90,9 +90,14 @@ p.price {
     margin-bottom: 0;
 }
 span.dateAdded {
-    margin: 0;
+    /* margin: 0; */
     font-size: 13px;
-    color: #929292;
+    color: #ee5b5b;
+    /* text-align: right; */
+    text-align: right;
+    margin-top: 15px;
+    width: 100%;
+    font-weight: 600;
 }
 
 div#filters {
@@ -325,6 +330,7 @@ div#points {
     transition: 0.2s;
     background-size: cover;
     background-position: 50% 50%;
+    background-attachment: fixed;
 }
 div#points-content {
     display: flex;
@@ -383,6 +389,19 @@ img.img-fluid.col-3.rounded-top {
 }
 h2.howitworks {
     font-weight: 100;
+    text-transform: uppercase;
+}
+.fw-100{
+    font-weight: 100;
+}
+.fw-300{
+    font-weight: 300;
+}
+.fw-400{
+    font-weight: 400;
+}
+.fw-600{
+    font-weight: 600;
 }
 i.pointicon {
     font-size: 4rem;
@@ -396,6 +415,8 @@ div#points h5 {
 div#wrapper-footer-full {
     background: #2b2b2b;
     color: white;
+    -webkit-clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 100%, 0 100%);
+    clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 100%, 0 100%);
 }
 
 div#page {
@@ -404,6 +425,8 @@ div#page {
 
 div#detailed {
     background: white;
+    -webkit-clip-path: polygon(0 0, 50% 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+clip-path: polygon(0 0, 50% 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
 }
 .filter-block {
     z-index: 88;
@@ -690,7 +713,7 @@ div#navbarNavDropdownMobile {
 ul#main-menu-mobile li{
     transition: 0.8s;
 }
-ul#main-menu-mobile li:hover {
+/* ul#main-menu-mobile li:hover {
     background: #ee5a5a;
     color: white;
     border-radius: 3em;
@@ -699,7 +722,7 @@ ul#main-menu-mobile li:hover a {
 
     color: white !important;
 
-}
+} */
 ul#main-menu-mobile a {
     font-weight: 300;
     color: black;
@@ -708,8 +731,11 @@ button:focus {
     outline: 0 !important;
 }
 
-.modal-lg {
+/* .modal-lg {
     max-width: 90vw !important;
+} */
+div#getPhone * {
+    height: 100vh;
 }
 
 @media(max-width:767px){
@@ -1465,6 +1491,21 @@ p.price.price-obj {
     border-radius: 200px;
 }
 
+@media (min-width:767px) {
+  p.price.price-obj {
+      font-size: 1.7em;
+      text-align: center;
+      background: rgb(255, 255, 255);
+      padding: 10px;
+      border-radius: 0px !important;
+      position: absolute !important;
+      bottom: 5.8rem !important;
+      width: calc(100% - .6rem) !important;
+      border-top: 5px solid #ee5b5b;
+  }
+}
+
+
 div#querybar_mobile #querywrapper_mobile {
     background: rgba(255, 255, 255, 0.35);
     padding: 10px;
@@ -1480,4 +1521,13 @@ button#moreParamsBtn {
     border-bottom: 1px dotted white;
     padding: 0;
     margin: 10px 0 5px 0;
+}
+.custom-font{
+    font-family: 'Playfair Display', serif !important;
+}
+
+a#studiolink {
+    color: gray;
+    border-bottom: 1px dotted;
+    text-decoration: none !important;
 }

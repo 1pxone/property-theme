@@ -6,9 +6,10 @@
  *
  * @package understrap
  */
-
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
+
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -19,7 +20,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link href="<?php echo get_template_directory_uri(); ?>/style.css?v=0.3" rel="stylesheet">
+	<link href="<?php echo get_template_directory_uri(); ?>/style.css?v=0.4" rel="stylesheet">
 	<link href="<?php echo get_template_directory_uri(); ?>/animate.css" rel="stylesheet">
 	<link href="<?php echo get_template_directory_uri(); ?>/css/normalize.css" rel="stylesheet">
   <link href="<?php echo get_template_directory_uri(); ?>/css/flaticon.css" rel="stylesheet">
@@ -32,11 +33,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<!--  SCRIPTS-->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/slick/slick.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/moment.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
-	  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.query.js"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.query.js"></script>
+	<script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+	<script src="https://yastatic.net/share2/share.js" async="async"></script>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -95,13 +98,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<ul class="navbar-nav my-2 my-lg-0" id="createBtn">
 						<li class="nav-item active mr-2">
-			        <a class="nav-link btn circled btn-secondary-outline fw-100 pb-0 px-0 " tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"><i class="ion-ios-telephone h4"></i></a>
+							<a tabindex="0" class="nav-link btn circled btn-secondary-outline fw-100 pb-0 px-0" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-popover-content="#a1">
+								<i class="ion-ios-telephone h4"></i>
+							</a>
 			      </li>
+
 			      <li class="nav-item active">
 			        <a class="nav-link btn circled btn-c-primary fw-100 px-3" href="/create">Разместить объявление <i class="ion-plus h6"></i></a>
 			      </li>
 	    		</ul>
 
+					<div class="hidden d-none" id="a1">
+					  <div class="popover-body pt-3">
+							<p>Телефон: <a href="tel:+88009991122">+88009991122</a></p>
+					    <p>Email: <a href="mailto:help@bestnest.ru">help@bestnest.ru</a></p>
+					  </div>
+					</div>
 			</div>
 
 
