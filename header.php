@@ -24,7 +24,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link href="<?php echo get_template_directory_uri(); ?>/animate.css" rel="stylesheet">
 	<link href="<?php echo get_template_directory_uri(); ?>/css/normalize.css" rel="stylesheet">
   <link href="<?php echo get_template_directory_uri(); ?>/css/flaticon.css" rel="stylesheet">
-	<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+	<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700,900&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
