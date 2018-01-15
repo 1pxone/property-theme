@@ -153,19 +153,18 @@ Template Post Type: houses
                       <small>Торг уместен</small>
                     </p>
                   <?php } ?>
-                  <?php  if( isset($_GET["secret"]) && $_GET["secret"] || isset($_COOKIE["secret".$theid.""]) && $_COOKIE["secret".$theid.""] == get_field( 'secret' )) : ?>
-                    
-                <a href="tel:<?php the_field( 'phone' ); ?>" class="btn btn-c-primary circled btn-block">
-                  <?php
-                    $str = strval(get_field( 'phone' ));
-                    $str = '+'.substr($str, 0, 1).'('.substr($str, 1, 3).')'.substr($str, 4, 3).'-'.substr($str, 7, 2).'-'.substr($str, 9, 2);
-                    echo $str;
-                  ?>
-                </a>
-              <?php else : ?>
-                <!-- <button class="btn btn-c-primary circled btn-block" data-toggle="modal" data-target="#getPhone" ><i class="icon ion-android-call"></i> Телефон владельца</button> -->
-                <a href="<?php the_field( 'buy_link' ); ?>" target="_blank" class="btn btn-c-primary circled btn-block"><i class="icon ion-android-call"></i> Телефон владельца</a>
-              <?php endif ?>
+                  <?php  if( $_GET["secret"] == get_field( 'secret' )) : ?>  
+                    <a href="tel:<?php the_field( 'phone' ); ?>" class="btn btn-c-primary circled btn-block">
+                      <?php
+                        $str = strval(get_field( 'phone' ));
+                        $str = '+'.substr($str, 0, 1).'('.substr($str, 1, 3).')'.substr($str, 4, 3).'-'.substr($str, 7, 2).'-'.substr($str, 9, 2);
+                        echo $str;
+                      ?>
+                    </a>
+                  <?php else : ?>
+                    <!-- <button class="btn btn-c-primary circled btn-block" data-toggle="modal" data-target="#getPhone" ><i class="icon ion-android-call"></i> Телефон владельца</button> -->
+                    <a href="<?php the_field( 'buy_link' ); ?>" target="_blank" class="btn btn-c-primary circled btn-block"><i class="icon ion-android-call"></i> Телефон владельца</a>
+                  <?php endif ?>
               <div class="row">
                 <?php if ( get_field( 'call_from') && get_field( 'call_to')  ) { ?>
                   <div class="col-12 text-center mt-2">
