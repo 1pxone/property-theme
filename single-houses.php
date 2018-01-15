@@ -153,7 +153,7 @@ Template Post Type: houses
                       <small>Торг уместен</small>
                     </p>
                   <?php } ?>
-              <?php $theid = get_the_ID(); if( isset($_GET["secret"]) && $_GET["secret"] || isset($_COOKIE["secret".$theid.]) && $_COOKIE["secret".$theid.] == get_field( 'secret' )) : ?>
+              <?php  if( $_GET["secret"] == get_field( 'secret' )) : ?>  
                 <a href="tel:<?php the_field( 'phone' ); ?>" class="btn btn-c-primary circled btn-block">
                   <?php
                     $str = strval(get_field( 'phone' ));
