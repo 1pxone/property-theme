@@ -87,7 +87,6 @@
         <div class="form-group mt-3">
           <label>Кондиционер:</label>
           <div class="btn-group w-100" data-toggle="buttons">
-
               <label class="btn btn-inactive active w-100">
                   <input type="radio"  name="conditioner" autocomplete="off" value="Нет" checked>Нет
               </label>
@@ -97,7 +96,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-12 col-sm-6 mb-3">
         <div class="form-group">
             <label for="material">Материал постройки:</label><br/>
@@ -114,11 +112,11 @@
                       "Сэндвич-панели"
                   );
               foreach($material as $key): ?>
-                   <div class="btn-group mb-1" data-toggle="buttons">
-                   <label class="btn btn-inactive ">
-                       <input type="checkbox" class="" name="material" autocomplete="off" value="<?php echo $key; ?>" ><?php echo $key; ?>
-                   </label>
-                 </div>
+                  <div class="btn-group mb-1" data-toggle="buttons">
+                     <label class="btn btn-inactive">
+                         <input type="checkbox" name="material" autocomplete="off" value="<?php echo $key; ?>" ><?php echo $key; ?>
+                     </label>
+                   </div>
               <?php endforeach; ?>
         </div>
       </div>
@@ -223,10 +221,10 @@
                    "Ярославское"
                );
            foreach($roads as $key): ?>
-               <div class="btn-group mb-1" data-toggle="buttons">
-               <label class="btn btn-sm btn-inactive ">
-                   <input type="checkbox" class="" name="road" autocomplete="off" value="<?php echo $key; ?>" ><?php echo $key; ?>
-               </label>
+              <div class="btn-group mb-1" data-toggle="buttons">
+                 <label class="btn btn-sm btn-inactive ">
+                     <input type="checkbox" name="road" autocomplete="off" value="<?php echo $key; ?>" ><?php echo $key; ?>
+                 </label>
              </div>
            <?php endforeach; ?>
            <div class="input-group">

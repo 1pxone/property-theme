@@ -19,6 +19,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
+	<meta name="webmoney" content="04197E6C-5369-4BE8-93CD-D2512C0ED48A"/>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href="<?php echo get_template_directory_uri(); ?>/style.css?v=0.4" rel="stylesheet">
 	<link href="<?php echo get_template_directory_uri(); ?>/animate.css" rel="stylesheet">
@@ -34,13 +35,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/slick/slick.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.query.js"></script>
 	<script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
 	<script src="https://yastatic.net/share2/share.js" async="async"></script>
 	<?php wp_head(); ?>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 </head>
 <body <?php body_class(); ?>>
 <div class="hfeed site" id="page">
@@ -78,8 +81,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 						'walker'          => new WP_Bootstrap_Navwalker(),
 					)
 				); ?>
-
-
 
 				<?php wp_nav_menu(
 					array(

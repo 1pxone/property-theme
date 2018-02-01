@@ -193,7 +193,7 @@ $(document).ready(function(){
 	})
 	getAllImagesDonePromise().then(function() {
 		var url = $("#bgsrc").attr("src");
-		setTimeout(  $("#points").css('background-image', 'url('+ url +')'), 1000);
+		$("#points").css('background-image', 'url('+ url +')')
 	});
 	$('p:empty').remove();
 	$('.equalheight .card').equalHeights();
