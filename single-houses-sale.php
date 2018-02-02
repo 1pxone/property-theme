@@ -153,7 +153,7 @@ Template Post Type: houses
                       <small>Торг уместен</small>
                     </p>
                   <?php } ?>
-                  <?php  if( $_GET["secret"] == get_field( 'secret' )) : ?>  
+                  <?php  if( $_GET["secret"] == get_field( 'secret' )) : ?>
                     <a href="tel:<?php the_field( 'phone' ); ?>" class="btn btn-c-primary circled btn-block">
                       <?php
                         $str = strval(get_field( 'phone' ));
@@ -274,17 +274,6 @@ Template Post Type: houses
             <div id="map"></div>
           </div>
         </div>
-
-<!-- Modal -->
-      <div class="modal fade mt-3" id="getPhone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog  modal-lg" role="document">
-            <div class="modal-content">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="<?php the_field( 'buy_link' ); ?>" allowfullscreen></iframe>
-              </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="row px-3 py-5 ">
